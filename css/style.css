@@ -296,8 +296,7 @@ a.tw-rss:hover .hover-eff{
 	display: block;
 	text-decoration: none !important;
 	font-weight: bold;
-	color: #E18728;
-	background-color: #fff;
+	color: #fff;
 }
 a.tw-twitter{
 	background-color: #55acee;
@@ -369,7 +368,10 @@ a.tw-twitter:hover{
 	line-height: 0.7em !important;
 }
 .ad-h{
-	margin-top: 10px;
+	background: #F0F0F0;
+	max-width: 300px;
+	padding: 10px;
+	margin-top: 20px;
 }
 .ad-ver{
 	width: 150px;
@@ -401,12 +403,14 @@ a.tw-twitter:hover{
 	border-bottom: 1px solid rgb(229, 229, 229);
 }
 .article-heading{
-	margin-top: 10px;
+	margin-top: 30px;
+	margin-bottom: 0;
 	font-size: 2rem;
 	line-height: 1.1em;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #ccc;
 }
 .add-info{
-	margin-top: 1rem;
 	color: #686C68 !important;
 	font-size: 0.80rem;
 	font-weight: bold;
@@ -629,7 +633,13 @@ a.tw-twitter:hover{
 		min-height: 60px;
 	}
 	.article-heading{
-		font-size: 1.8rem;
+		font-size: 1.7rem;
+		padding-bottom: 5px;
+		margin-top: 20px;
+	}
+	.ad-h{
+		padding:5px;
+		margin-top: 0px;
 	}
 }
 @media(max-width: 540px){
@@ -639,9 +649,6 @@ a.tw-twitter:hover{
 }
 /*Standard breaks of Grid*/
 @media(max-width: 840px){
-	.ad-h{
-		margin-top: 0px;
-	}
 	.article-heading{
 		font-size: 1.5rem;
 	}

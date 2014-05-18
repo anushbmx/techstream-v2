@@ -15,7 +15,7 @@
 			|Template Value | Description
 			-----------------------------------------------------
 			| 	  0/Null	| Normal page Template 				|
-			|		1 		| Wide page Template 				|
+			|		1 		| Pages with code 	 				|
 			-----------------------------------------------------
 		$code
 */
@@ -29,37 +29,19 @@
 	<link rel="stylesheet" href="css/grid.css">
 	<link rel="stylesheet" href="css/font-awesome.css">
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
-
-
-	<link rel="stylesheet" href="css/fonts.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/grid.css">
-	<link rel="stylesheet" href="css/font-awesome.css">
-	<link rel="stylesheet" href="css/highlight/default.css">
-	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
 	<?php 
-		if(isset($template)): 
-			if ($template == 2): 
+		if(isset($template)):
+			if ($template == 1):
 	?>	
-			
+	<link rel="stylesheet" href="css/highlight/default.css">	
 	<?php
-			endif;
 		endif;
+	endif;
 	?>
-
 </head>
 
 <body>
-	<div class="main-container" <?php 
-									if(isset($template)): 
-										if ($template == 1): 
-								?>
-											 id="wide" 
-								<?php
-											endif;
-										endif;
-								?> 
-	>
+	<div class="main-container" id="wide">
 		<div id="top"></div>  	<!-- used to bring users to top -->
 		<header id="main-header">
 			<div class="content-inner">

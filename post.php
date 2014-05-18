@@ -26,8 +26,10 @@
 							        <div class="column-small-6">
 							        	<div class="article-info-container center-small">
 								        	<h1 class="article-heading hide-small">The Big Title of this all msss</h1>
-									    	<div class="ad ad-h">
-								        		<small class="advert">Advertisement </small>
+								        	<div class="add-info center-small">
+								        		<p>Posted in <a href="#">Section</a> on Date . Total comments <a href="#comments">comments</a></p>
+								        	</div>
+									    	<div class="ad ad-h center-small">
 								        		<div class="bsap_1293798 bsap" id="bsap_1293798">
 									        		<div class="bsa_it one">
 									        			<div class="ad1 odd" id="bsa_4751333">
@@ -59,9 +61,6 @@
 					<div class="inner-container">
 						<div class="row">
 							<div class="column-small-11 center">
-					        	<div class="add-info">
-					        		<p>Posted in <a href="#">Section</a> on Date . Total comments <a href="#comments">comments</a></p>
-					        	</div>								
 								<article class="article">
 									<p>psum. Sed pellentesque ante sapien, at consectetur nunc ornare et. Integer tincidunt ac magna id vestibulum. Vivamus diam tellus, mollis ut lorem vel, interdum egestas augue. Sed sagittis hendrerit dapibus. Donec orci urna, gravida a sagittis eu, we do have some <code>moz-border</code> in line. lobortis vitae sapien.</p>
 

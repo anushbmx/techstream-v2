@@ -9,7 +9,7 @@
 	NB : init.php & the required variables are to be defiled before loading footer.php
 
 	Variables used in Footer
-		$footer_template -> Used to load Custome modules. If not set Default styles will only be loaded.
+		$template -> Used to load Custome modules. If not set Default styles will only be loaded.
 			
 			|Template Value | Description
 			-----------------------------------------------------
@@ -70,7 +70,15 @@
 			</div><!-- end of class="content-inner" -->
 		</footer>
 	</div> <!-- end of class="main-container" -->
-	<script src="js/highlight.pack.js"></script>
-	<script>hljs.initHighlightingOnLoad();</script>
+	<?php 
+		if(isset($template)):
+			if ($template == 1):
+	?>	
+		<script src="js/highlight.pack.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	<?php
+		endif;
+	endif;
+	?>
 </body>
 </html>
