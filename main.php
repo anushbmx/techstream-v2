@@ -4,8 +4,16 @@
 
 		$title -> The page title of serving webpage, if not set Default value will be printed.
 		$template -> Used to load Custome CSS/JS or any additional files. If not set Default styles will only be loaded.
+
+
+		-------------------
+		TODO's
+
+			Make a place holder for no result images
 	*/
+	include('_core/init.php');
 	$template=0;
+	include('_includes/header.php');
 ?>
 		<div class="content">
 			<div class="content-inner">
@@ -16,10 +24,19 @@
 								<div class="row">
 									<div class="column-small-6 padd0">
 							            <div class="article-image center-small">
+							            <?php if(article_exist()): 
+							            		$data=article_last_published(false,'Web Design','DIY');
+							            ?>
 							            	<img src="images/Hello-World.jpg"/>
 							            	<div class="overlay-box">
-							            		<h1 class="overlay-heading">This is the big title</h1>
+							            		<h1 class="overlay-heading"><?php echo $data['TITLE'] ?></h1>
 							            	</div><!-- end of class ="overlay-box" -->
+							            <?php else: ?>
+							            	<img src="images/Hello-World.jpg"/>
+							            	<div class="overlay-box">
+							            		<h1 class="overlay-heading">No Posts Found</h1>
+							            	</div><!-- end of class ="overlay-box" -->							            	
+							            <?php endif; ?>
 							            </div><!-- end of class="atticle-image" -->
 							        </div> <!-- end of column -1 -->
 							        <div class="column-small-4 padd0-small">

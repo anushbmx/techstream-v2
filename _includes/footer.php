@@ -79,6 +79,7 @@
 	<?php
 		endif;
 	endif;
+	require('../_core/db_close.php')
 	?>
 </body>
 </html>
