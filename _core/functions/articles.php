@@ -46,6 +46,49 @@ function article_exist($option = FALSE){
 	return (mysql_result($qurrey,0) !=0) ? true : false;
 }
 
+function article_last_published($option = FALSE){
+/**
+*  Last Published Article
+*
+* Returns the unique ID of last Published article according to calender
+*
+* Arguments ( $selection , <category> )
+* $option    -> True  : Selects the last post from the specified category
+*			 -> False : Selects the last post excluding the specified category 
+*				
+*				NB : TO select from all category use 'False' with no arguments,
+*					 Default argument for $option is set to FALSE to facilitate
+*					 use of function without any arguments.
+*
+**/
+	
+
+	$func_num_args = func_num_args();
+	$func_get_args = func_get_args(); 
+
+
+	if($option == true){
+		if($func_num_args == 1){
+			unset($func_get_args[0]);
+			$fields =' SEC = \''.implode('\' AND SEC = \'',$func_get_args).'\'';
+			$query= "SELECT SL_NO FROM data WHERE $fields ORDER BY DATE DESC LIMIT 1";
+		}else
+			return 0;
+	}else{
+		if($func_num_args>1){
+			unset($func_get_args[0]);
+			$fields =' SEC != \''.implode('\' AND SEC != \'',$func_get_args).'\'';
+			$query= "SELECT SL_NO FROM data WHERE $fields ORDER BY DATE DESC LIMIT 1";
+		}else
+			$query= "SELECT SL_NO FROM data ORDER BY DATE DESC LIMIT 1";
+	}
+
+	$data =mysql_result(mysql_query($query),0);
+	
+	return $data;
+
+}
+
 function article_data($article_id){
 /**
 * Article Information

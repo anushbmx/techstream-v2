@@ -25,12 +25,13 @@
 									<div class="column-small-6 padd0">
 							            <div class="article-image center-small">
 							            <?php if(article_exist()): 
-							            		$data=article_last_published(false,'Web Design','DIY');
+							            		$article_id = article_last_published(FALSE,'Bits');
+							            		$data = article_data($article_id)
 							            ?>
 							            	<img src="images/Hello-World.jpg"/>
 							            	<div class="overlay-box">
-							            		<h1 class="overlay-heading">Posts Found</h1>
-							            	</div><!-- end of class ="overlay-box" -->		
+							            		<h1 class="overlay-heading"><?php echo $data['TITLE'] ?></h1>
+							            	</div><!-- end of class ="overlay-box" -->
 							            <?php else: ?>
 							            	<img src="images/Hello-World.jpg"/>
 							            	<div class="overlay-box">
