@@ -29,8 +29,8 @@
 							            ?>
 							            	<img src="images/Hello-World.jpg"/>
 							            	<div class="overlay-box">
-							            		<h1 class="overlay-heading"><?php echo $data['TITLE'] ?></h1>
-							            	</div><!-- end of class ="overlay-box" -->
+							            		<h1 class="overlay-heading">Posts Found</h1>
+							            	</div><!-- end of class ="overlay-box" -->		
 							            <?php else: ?>
 							            	<img src="images/Hello-World.jpg"/>
 							            	<div class="overlay-box">
