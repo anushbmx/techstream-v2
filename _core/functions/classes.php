@@ -88,7 +88,7 @@ class article {
 	}
 
 	function article_sub_section(){
-		echo $article_sub_section;
+		echo $this->ar_sub_section;
 	}
 
 	function article_url(){

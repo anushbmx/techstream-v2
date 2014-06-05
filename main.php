@@ -33,8 +33,8 @@
 							            		<h1 class="overlay-heading"><?php $data->article_title();?></h1>
 							            	</div><!-- end of class ="overlay-box" -->
 							            <?php else: ?>
+							            	<img src="images/Hello-World.jpg"/>
 							            	<div class="overlay-box">
-							            		<img src="images/Hello-World.jpg"/>
 							            		<h1 class="overlay-heading">No Posts Found</h1>
 							            	</div><!-- end of class ="overlay-box" -->							            	
 							            <?php endif; ?>
@@ -45,25 +45,34 @@
 							        		<h2 class="section-heading"><i class="fa fa-clipboard fa-2"></i>  Bits</h2>
 							        		<div class="bits">
 							        			<ul class="bit">
+							        			<?php
+													if(article_exist()): 
+									            		$article_list = article_published(3,0,True,'Bits');
+									            		while($article_id = mysql_fetch_array($article_list, MYSQL_ASSOC )){
+									            			$data = article_data($article_id['SL_NO'])
+								    		 	?>
 							        				<li>
 							        					<a href="#">
-							        						<h3 class="bit-title">Fix HTML HEIGHT</h3>
-							        						<span class="section-link">in Javascript</span>
+							        						<h3 class="bit-title"><?php $data->article_title();?></h3>
+							        						<span class="section-link">in <?php $data->article_sub_section();?></span>
 							        					</a>
 							        				</li>
-							        				<li>
-							        					<a href="#">
-							        						<h3 class="bit-title">Max height in CSS</h3>
-							        						<span class="section-link">in CSS</span>
-							        					</a>
-							        				</li>
-							        				<li>
-							        					<a href="#">
-							        						<h3 class="bit-title">Date in HTML</h3>
-							        						<span class="section-link">in HTML5</span>
-							        					</a>
-							        				</li>
+							        			<?php
+							        					}//end of while
+							        			?>
 							        				<li class="more-bits"><a href="#">More ... <i class="fa fa-long-arrow-right"></i></a></li>
+							        			<?php
+							        				else:
+							        			?>
+							        				<li>
+							        					<a href="#">
+							        						<h3 class="bit-title">No Bits Found</h3>
+							        						<span class="section-link">Nothing found</span>
+							        					</a>
+							        				</li>
+							        			<?php 
+							        				endif;
+							        			?>
 							        			</ul>
 							        		</div><!-- end of class="bits" -->
 							        	</div><!-- end of class="bits-container" -->
