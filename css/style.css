@@ -207,6 +207,9 @@ button, input, select, textarea {
 	margin-left: auto;
 	position: relative;
 }
+.article-image a:hover .overlay-box{
+	background-color: rgba(4,61,248,0.4);;
+}
 #wide .article-image{
 	margin-left: 0;
 }

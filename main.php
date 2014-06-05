@@ -25,13 +25,16 @@
 									<div class="column-small-6 padd0">
 							            <div class="article-image center-small">
 							            <?php if(article_exist()): 
+
 							            		$article_id = article_last_published(FALSE,'Bits');
 							            		$data = article_data($article_id)
 							            ?>
-							            	<img src="<?php static_url(); $data->article_image();?>"/>
-							            	<div class="overlay-box">
-							            		<h1 class="overlay-heading"><?php $data->article_title();?></h1>
-							            	</div><!-- end of class ="overlay-box" -->
+							            	<a href="<?php static_url('main'); $data->article_url();?>">
+								            	<img src="<?php static_url('images'); $data->article_image();?>"/>
+								            	<div class="overlay-box">
+								            		<h1 class="overlay-heading"><?php $data->article_title();?></h1>
+								            	</div><!-- end of class ="overlay-box" -->
+								            </a>
 							            <?php else: ?>
 							            	<img src="images/Hello-World.jpg"/>
 							            	<div class="overlay-box">
@@ -52,7 +55,7 @@
 									            			$data = article_data($article_id['SL_NO'])
 								    		 	?>
 							        				<li>
-							        					<a href="#">
+							        					<a href="<?php static_url('main'); $data->article_url();?>">
 							        						<h3 class="bit-title"><?php $data->article_title();?></h3>
 							        						<span class="section-link">in <?php $data->article_sub_section();?></span>
 							        					</a>
@@ -124,7 +127,7 @@
 							    		 			<div class="row">
 							    		 				<div class="column-xsmall-3 padd0 post-image-small"> <img src="<?php static_url('img'); $data->article_image_small();?>"></div>
 							    		 				<div class="column-xsmall-9">
-							    		 					<h3 class="post-list-title"><a href="#" class="post-title-a"><?php $data->article_title();?></a></h3>
+							    		 					<h3 class="post-list-title"><a href="<?php static_url('main'); $data->article_url();?>" class="post-title-a"><?php $data->article_title();?></a></h3>
 							    		 					<p><?php echo elliStr($data->ar_description,200); ?> .. <a href="">Read More</a></p>
 							    		 					<div class="article-add-info">posted in <a href="#"><?php $data->article_section();?></a>  <i class="fa fa-calendar"></i> <?php $data->article_published_data();?></div>
 							    		 				</div>
