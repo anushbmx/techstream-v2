@@ -28,7 +28,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/grid.css">
 	<link rel="stylesheet" href="css/font-awesome.css">
-	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+	<!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900"> -->
 	<?php 
 		if(isset($template)):
 			if ($template == 1):

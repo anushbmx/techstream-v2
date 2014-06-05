@@ -164,7 +164,9 @@ function article_data($article_id){
 
 	$data =mysql_fetch_assoc(mysql_query($query));
 	
-	return $data;
+	$ar_data = new article($data); 
+
+	return $ar_data;
 }
 
 ?>

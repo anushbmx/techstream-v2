@@ -28,13 +28,13 @@
 							            		$article_id = article_last_published(FALSE,'Bits');
 							            		$data = article_data($article_id)
 							            ?>
-							            	<img src="images/Hello-World.jpg"/>
+							            	<img src="<?php static_url(); $data->article_image();?>"/>
 							            	<div class="overlay-box">
-							            		<h1 class="overlay-heading"><?php echo $data['TITLE'] ?></h1>
+							            		<h1 class="overlay-heading"><?php $data->article_title();?></h1>
 							            	</div><!-- end of class ="overlay-box" -->
 							            <?php else: ?>
-							            	<img src="images/Hello-World.jpg"/>
 							            	<div class="overlay-box">
+							            		<img src="images/Hello-World.jpg"/>
 							            		<h1 class="overlay-heading">No Posts Found</h1>
 							            	</div><!-- end of class ="overlay-box" -->							            	
 							            <?php endif; ?>
@@ -107,22 +107,27 @@
 							    		 	<ul class="post-list">
 							    		 	<?php
 												if(article_exist()): 
-								            		$article_data = article_published(3,1,False,'Bits');
-								            		while($article_id = mysql_fetch_array($article_data, MYSQL_ASSOC )){
+								            		$article_list = article_published(3,1,False,'Bits');
+								            		while($article_id = mysql_fetch_array($article_list, MYSQL_ASSOC )){
 								            			$data = article_data($article_id['SL_NO'])
 							    		 	?>
 							    		 		<li>
 							    		 			<div class="row">
-							    		 				<div class="column-xsmall-3 padd0 post-image-small"> <img src="images/5-Elements-of-Websites-that-Convert-110.jpg"></div>
+							    		 				<div class="column-xsmall-3 padd0 post-image-small"> <img src="<?php static_url('img'); $data->article_image_small();?>"></div>
 							    		 				<div class="column-xsmall-9">
-							    		 					<h3 class="post-list-title"><a href="#" class="post-title-a"><?php echo $data['TITLE'] ?></a></h3>
-							    		 					<p><?php echo elliStr($data['DES'],200); ?> .. <a href="">Read More</a></p>
-							    		 					<div class="article-add-info">posted in <a href="#"><?php echo $data['SEC'] ?></a>  <i class="fa fa-calendar"></i> 4/2/2014</div>
+							    		 					<h3 class="post-list-title"><a href="#" class="post-title-a"><?php $data->article_title();?></a></h3>
+							    		 					<p><?php echo elliStr($data->ar_description,200); ?> .. <a href="">Read More</a></p>
+							    		 					<div class="article-add-info">posted in <a href="#"><?php $data->article_section();?></a>  <i class="fa fa-calendar"></i> <?php $data->article_published_data();?></div>
 							    		 				</div>
 							    		 			</div>
 							    		 		</li>
 							    		 	<?php
 							    		 			}// end of while loop
+							    		 	?>
+							    		 		<li class="more-post">
+							    		 			<a href="">More Post... <i class="fa fa-long-arrow-right"></i></a>
+							    		 		</li>
+							    		 	<?php
 							    		 		else:
 							    		 	?>
 							    		 		<li>
@@ -138,9 +143,6 @@
 							    		 	<?php
 							    		 		endif;
 							    		 	?>
-							    		 		<li class="more-post">
-							    		 			<a href="">More Post... <i class="fa fa-long-arrow-right"></i></a>
-							    		 		</li>
 							    		 	</ul>
 							    		 </div>
 							    	</div>
