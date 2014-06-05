@@ -11,6 +11,8 @@ function article_exist($option = FALSE){
 * mentioned i argument.
 *
 * Arguments ( $selection , <category> )
+* -------------------------------------
+*
 * $option    -> True  : Checks if article exists in specified category
 *			 -> False : Selects the last post excluding the specified category 
 *				
@@ -53,6 +55,8 @@ function article_last_published($option = FALSE){
 * Returns the unique ID of last Published article according to calender
 *
 * Arguments ( $selection , <category> )
+* --------------------------------------
+*
 * $option    -> True  : Selects the last post from the specified category
 *			 -> False : Selects the last post excluding the specified category 
 *				
@@ -70,7 +74,7 @@ function article_last_published($option = FALSE){
 	if($option == true){
 		if($func_num_args == 1){
 			unset($func_get_args[0]);
-			$fields =' SEC = \''.implode('\' AND SEC = \'',$func_get_args).'\'';
+			$fields =' SEC = \''.implode('\' OR SEC = \'',$func_get_args).'\'';
 			$query= "SELECT SL_NO FROM data WHERE $fields ORDER BY DATE DESC LIMIT 1";
 		}else
 			return 0;
@@ -89,12 +93,66 @@ function article_last_published($option = FALSE){
 
 }
 
+function article_published($limit, $start=0,$option = FALSE){
+/**
+*  Last Published Article
+*
+* Returns the unique ID of last Published article according to calender
+*
+* Arguments ( $selection , <category> )
+* --------------------------------------
+*
+* $limit 	 -> Number of results to print / display
+* $start 	 -> Index number to start
+* $option    -> True  : Selects the last post from the specified category
+*			 -> False : Selects the last post excluding the specified category 
+*				
+*				NB : TO select from all category use 'False' with no arguments,
+*					 Default argument for $option is set to FALSE to facilitate
+*					 use of function without any arguments.
+*
+**/
+	
+
+	$func_num_args = func_num_args();
+	$func_get_args = func_get_args(); 
+
+	$limit=$start+$limit;
+	unset($func_get_args[0]);
+	unset($func_get_args[1]);
+	unset($func_get_args[2]);
+
+	if($option == true){
+		if($func_num_args > 3){
+			$fields =' SEC = \''.implode('\' OR SEC = \'',$func_get_args).'\'';
+			$query= "SELECT SL_NO FROM data WHERE $fields ORDER BY DATE DESC LIMIT $start, $limit";
+		}else
+			return 0;
+	}else{
+		if($func_num_args>1){
+			$fields =' SEC != \''.implode('\' AND SEC != \'',$func_get_args).'\'';
+			$query= "SELECT SL_NO FROM data WHERE $fields ORDER BY DATE DESC LIMIT $start, $limit";
+		}else
+			$query= "SELECT SL_NO FROM data ORDER BY DATE DESC LIMIT $start, $limit";
+	}
+
+	$data =mysql_query($query);
+	
+	return $data;
+
+}
+
 function article_data($article_id){
 /**
 * Article Information
 *
 * Returns all informations or an article from its article ID
 * in an Array.
+*
+* Arguments ( $selection , <category> )
+* --------------------------------------
+*
+* $article_id 	 -> ID of article
 **/
 
 	$data = array();

@@ -105,46 +105,39 @@
 							    		 <div class="column-small-12 padd0">
 							    		 <h4 class="section-heading"><i class="fa fa-file-text"></i> Posts</h4>
 							    		 	<ul class="post-list">
+							    		 	<?php
+												if(article_exist()): 
+								            		$article_data = article_published(3,1,False,'Bits');
+								            		while($article_id = mysql_fetch_array($article_data, MYSQL_ASSOC )){
+								            			$data = article_data($article_id['SL_NO'])
+							    		 	?>
 							    		 		<li>
 							    		 			<div class="row">
 							    		 				<div class="column-xsmall-3 padd0 post-image-small"> <img src="images/5-Elements-of-Websites-that-Convert-110.jpg"></div>
 							    		 				<div class="column-xsmall-9">
-							    		 					<h3 class="post-list-title"><a href="#" class="post-title-a">Sample title of the Article</a></h3>
-							    		 					<p> THis is a simple attcle, in the context of typing elements of the website that can convert.Praesent diam velit, accumsan id dui et, hendrerit varius lorem. <a href="">Read More</a></p>
-							    		 					<div class="article-add-info">posted in <a href="#">Web Design</a>  <i class="fa fa-calendar"></i> 4/2/2014</div>
+							    		 					<h3 class="post-list-title"><a href="#" class="post-title-a"><?php echo $data['TITLE'] ?></a></h3>
+							    		 					<p><?php echo elliStr($data['DES'],200); ?> .. <a href="">Read More</a></p>
+							    		 					<div class="article-add-info">posted in <a href="#"><?php echo $data['SEC'] ?></a>  <i class="fa fa-calendar"></i> 4/2/2014</div>
 							    		 				</div>
 							    		 			</div>
 							    		 		</li>
+							    		 	<?php
+							    		 			}// end of while loop
+							    		 		else:
+							    		 	?>
 							    		 		<li>
 							    		 			<div class="row">
 							    		 				<div class="column-xsmall-3 padd0 post-image-small"> <img src="images/5-Elements-of-Websites-that-Convert-110.jpg"></div>
 							    		 				<div class="column-xsmall-9">
-							    		 					<h3 class="post-list-title"><a href="#" class="post-title-a">Sample title of the Article</a></h3>
-							    		 					<p> THis is a simple attcle, in the context of typing elements of the website that can convert.Praesent diam velit, accumsan id dui et, hendrerit varius lorem. <a href="">Read More</a></p>
-							    		 					<div class="article-add-info">posted in <a href="#">Web Design</a>  <i class="fa fa-calendar"></i> 4/2/2014</div>
+							    		 					<h3 class="post-list-title"><a href="#" class="post-title-a">No Posts Found</a></h3>
+							    		 					<p>No posts Found</p>
+							    		 					<div class="article-add-info">posted in <a href="#">NONE</a>  <i class="fa fa-calendar"></i> 4/2/2014</div>
 							    		 				</div>
 							    		 			</div>
 							    		 		</li>
-							    		 		<li>
-							    		 			<div class="row">
-							    		 				<div class="column-xsmall-3 padd0 post-image-small"> <img src="images/5-Elements-of-Websites-that-Convert-110.jpg"></div>
-							    		 				<div class="column-xsmall-9">
-							    		 					<h3 class="post-list-title"><a href="#" class="post-title-a">Sample title of the Article</a></h3>
-							    		 					<p> THis is a simple attcle, in the context of typing elements of the website that can convert.Praesent diam velit, accumsan id dui et, hendrerit varius lorem. <a href="">Read More</a></p>
-							    		 					<div class="article-add-info">posted in <a href="#">Web Design</a>  <i class="fa fa-calendar"></i> 4/2/2014</div>
-							    		 				</div>
-							    		 			</div>
-							    		 		</li>
-							    		 		<li>
-							    		 			<div class="row">
-							    		 				<div class="column-xsmall-3 padd0 post-image-small"> <img src="images/5-Elements-of-Websites-that-Convert-110.jpg"></div>
-							    		 				<div class="column-xsmall-9">
-							    		 					<h3 class="post-list-title"><a href="#" class="post-title-a">Sample title of the Article</a></h3>
-							    		 					<p> THis is a simple attcle, in the context of typing elements of the website that can convert.Praesent diam velit, accumsan id dui et, hendrerit varius lorem. <a href="">Read More</a></p>
-							    		 					<div class="article-add-info">posted in <a href="#">Web Design</a>  <i class="fa fa-calendar"></i> 4/2/2014</div>
-							    		 				</div>
-							    		 			</div>
-							    		 		</li>
+							    		 	<?php
+							    		 		endif;
+							    		 	?>
 							    		 		<li class="more-post">
 							    		 			<a href="">More Post... <i class="fa fa-long-arrow-right"></i></a>
 							    		 		</li>

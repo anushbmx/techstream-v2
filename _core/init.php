@@ -7,5 +7,6 @@
 
 	require 'database/db_connect.php';
 
+	require 'functions/general.php';
 	require 'functions/articles.php';
 ?>
