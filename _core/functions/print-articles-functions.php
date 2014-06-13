@@ -170,7 +170,7 @@ function numbered_nav($page,$posts_per_page,$query,$url,$pages_to_show = 7, $alw
 		$numposts = mysql_result(mysql_query($query),0);
 		$max_page = ceil($numposts /$posts_per_page);
 
-		if($max_page > 1) {
+		if($max_page > 1):
 			echo "<div class='page_numbers'><ul><li>Page $page of $max_page</li>";
 			if($page!= 1){echo '<li><a ';
 						if($page!=2){ echo 'href="'.$url.'&page='.($page-1).'"'; }else {echo 'href="'.$url.'"'; }
@@ -197,7 +197,7 @@ function numbered_nav($page,$posts_per_page,$query,$url,$pages_to_show = 7, $alw
 			if($page!= $max_page){echo '<li> <a href="'.$url.'&page='.($page+1).'">&raquo;</a></li>';}
 			echo "</ul><div class=\"newline\"></div></div>";
 		
-		}
+		endif;
 }
 
 function sitemap($section,$subsection){

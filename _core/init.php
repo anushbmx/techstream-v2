@@ -10,4 +10,5 @@
 	require 'functions/general.php';
 	require 'functions/classes.php';
 	require 'functions/articles.php';
+	require 'functions/print.php';
 ?>

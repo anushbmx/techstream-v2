@@ -3,6 +3,24 @@
 * Contains the functions dealing with article 
 */
 
+function article_valid_url($article_url){
+/**
+*  Article URL Valid
+*
+* Returns the TRUE or FALSE if the URL is a valid post 
+*
+* Arguments ( $article_url )
+* -------------------------------------
+*
+* $article_url -> URL to be inspected
+*
+**/
+
+	$article_url=mysql_real_escape_string($article_url);
+	$qurrey=mysql_query("select count(*) from data where LINK = BINARY('$url') and ARTICLE_STATUS=1");
+	return (mysql_result($qurrey,0) == 1) ? true : false;
+}
+
 function article_exist($option = FALSE){
 /**
 *  Article Exist
@@ -75,16 +93,16 @@ function article_last_published($option = FALSE){
 		if($func_num_args == 1){
 			unset($func_get_args[0]);
 			$fields =' SEC = \''.implode('\' OR SEC = \'',$func_get_args).'\'';
-			$query= "SELECT SL_NO FROM data WHERE $fields ORDER BY DATE DESC LIMIT 1";
+			$query= "SELECT SL_NO FROM data WHERE $fields AND ARTICLE_STATUS=1 ORDER BY DATE DESC LIMIT 1";
 		}else
 			return 0;
 	}else{
 		if($func_num_args>1){
 			unset($func_get_args[0]);
 			$fields =' SEC != \''.implode('\' AND SEC != \'',$func_get_args).'\'';
-			$query= "SELECT SL_NO FROM data WHERE $fields ORDER BY DATE DESC LIMIT 1";
+			$query= "SELECT SL_NO FROM data WHERE $fields AND ARTICLE_STATUS=1 ORDER BY DATE DESC LIMIT 1";
 		}else
-			$query= "SELECT SL_NO FROM data ORDER BY DATE DESC LIMIT 1";
+			$query= "SELECT SL_NO FROM data WHERE ARTICLE_STATUS=1 ORDER BY DATE DESC LIMIT 1";
 	}
 
 	$data =mysql_result(mysql_query($query),0);
@@ -93,7 +111,7 @@ function article_last_published($option = FALSE){
 
 }
 
-function article_published($limit, $start=0,$option = FALSE){
+function article_published($limit, $start=0, $option = FALSE){
 /**
 *  Last Published Article
 *
@@ -117,7 +135,6 @@ function article_published($limit, $start=0,$option = FALSE){
 	$func_num_args = func_num_args();
 	$func_get_args = func_get_args(); 
 
-	$limit=$start+$limit;
 	unset($func_get_args[0]);
 	unset($func_get_args[1]);
 	unset($func_get_args[2]);
@@ -125,15 +142,15 @@ function article_published($limit, $start=0,$option = FALSE){
 	if($option == true){
 		if($func_num_args > 3){
 			$fields =' SEC = \''.implode('\' OR SEC = \'',$func_get_args).'\'';
-			$query= "SELECT SL_NO FROM data WHERE $fields ORDER BY DATE DESC LIMIT $start, $limit";
+			$query= "SELECT SL_NO FROM data WHERE $fields AND ARTICLE_STATUS=1 ORDER BY DATE DESC LIMIT $start, $limit";
 		}else
 			return 0;
 	}else{
-		if($func_num_args>1){
+		if($func_num_args>3){
 			$fields =' SEC != \''.implode('\' AND SEC != \'',$func_get_args).'\'';
-			$query= "SELECT SL_NO FROM data WHERE $fields ORDER BY DATE DESC LIMIT $start, $limit";
+			$query= "SELECT SL_NO FROM data WHERE $fields AND ARTICLE_STATUS=1 ORDER BY DATE DESC LIMIT $start, $limit";
 		}else
-			$query= "SELECT SL_NO FROM data ORDER BY DATE DESC LIMIT $start, $limit";
+			$query= "SELECT SL_NO FROM data WHERE ARTICLE_STATUS=1 ORDER BY DATE DESC LIMIT $start, $limit";
 	}
 
 	$data =mysql_query($query);

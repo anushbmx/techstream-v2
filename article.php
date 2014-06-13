@@ -5,8 +5,26 @@
 		$title -> The page title of serving webpage, if not set Default value will be printed.
 		$template -> Used to load Custome CSS/JS or any additional files. If not set Default styles will only be loaded.
 	*/
+	include('_core/init.php');
 	$template=0;
+	$post_per_page = 10;
+
+	if (empty($_GET["page"])== true && isset($_GET["page"]) == false ) {
+		$page=0;
+		$start = 0;
+	}else{
+		$page=$_GET["page"];
+		$start =  $page * $post_per_page;	//Sets the starting post from the page number
+		if($page < 2){
+			$page = 0;
+			$start = 0;
+		}
+		
+	}	
+
+	
 	include('_includes/header.php');
+
 ?>
 		<div class="content">
 			<div class="content-inner">
@@ -64,61 +82,47 @@
 							    	<div class="row">
 							    		 <div class="column-small-12 padd0">
 							    		 	<ul class="post-list">
-							    		 		<li>
-							    		 			<div class="row">
-							    		 				<div class="column-xsmall-2 padd0 post-image-small"> <img src="images/5-Elements-of-Websites-that-Convert-110.jpg"></div>
-							    		 				<div class="column-xsmall-9">
-							    		 					<h3 class="post-list-title"><a href="#" class="post-title-a">Sample title of the Article</a></h3>
-							    		 					<p> THis is a simple attcle, in the context of typing elements of the website that can convert.Praesent diam velit, accumsan id dui et, hendrerit varius lorem. <a href="">Read More</a></p>
-							    		 					<div class="article-add-info">posted in <a href="#">Web Design</a>  <i class="fa fa-calendar"></i> 4/2/2014</div>
-							    		 				</div>
-							    		 			</div>
-							    		 		</li>
-							    		 		<li>
-							    		 			<div class="row">
-							    		 				<div class="column-xsmall-2 padd0 post-image-small"> <img src="images/5-Elements-of-Websites-that-Convert-110.jpg"></div>
-							    		 				<div class="column-xsmall-9">
-							    		 					<h3 class="post-list-title"><a href="#" class="post-title-a">Sample title of the Article</a></h3>
-							    		 					<p> THis is a simple attcle, in the context of typing elements of the website that can convert.Praesent diam velit, accumsan id dui et, hendrerit varius lorem. <a href="">Read More</a></p>
-							    		 					<div class="article-add-info">posted in <a href="#">Web Design</a>  <i class="fa fa-calendar"></i> 4/2/2014</div>
-							    		 				</div>
-							    		 			</div>
-							    		 		</li>
-							    		 		<li>
-							    		 			<div class="row">
-							    		 				<div class="column-xsmall-2 padd0 post-image-small"> <img src="images/5-Elements-of-Websites-that-Convert-110.jpg"></div>
-							    		 				<div class="column-xsmall-9">
-							    		 					<h3 class="post-list-title"><a href="#" class="post-title-a">Sample title of the Article</a></h3>
-							    		 					<p> THis is a simple attcle, in the context of typing elements of the website that can convert.Praesent diam velit, accumsan id dui et, hendrerit varius lorem. <a href="">Read More</a></p>
-							    		 					<div class="article-add-info">posted in <a href="#">Web Design</a>  <i class="fa fa-calendar"></i> 4/2/2014</div>
-							    		 				</div>
-							    		 			</div>
-							    		 		</li>
-							    		 		<li>
-							    		 			<div class="row">
-							    		 				<div class="column-xsmall-2 padd0 post-image-small"> <img src="images/5-Elements-of-Websites-that-Convert-110.jpg"></div>
-							    		 				<div class="column-xsmall-9">
-							    		 					<h3 class="post-list-title"><a href="#" class="post-title-a">Sample title of the Article</a></h3>
-							    		 					<p> THis is a simple attcle, in the context of typing elements of the website that can convert.Praesent diam velit, accumsan id dui et, hendrerit varius lorem. <a href="">Read More</a></p>
-							    		 					<div class="article-add-info">posted in <a href="#">Web Design</a>  <i class="fa fa-calendar"></i> 4/2/2014</div>
-							    		 				</div>
-							    		 			</div>
-							    		 		</li>
+												<?php
+												if(article_exist()): 
+													$article_list = article_published($post_per_page, $start, False, 'Bits');
+													while($article_id = mysql_fetch_array($article_list, MYSQL_ASSOC )){
+														$data = article_data($article_id['SL_NO'])
+												?>
+													<li>
+														<div class="row">
+															<div class="column-xsmall-3 padd0 post-image-small"> <img src="<?php static_url('img'); $data->article_image_small();?>"></div>
+															<div class="column-xsmall-9">
+																<h3 class="post-list-title"><a href="<?php static_url('main'); $data->article_url();?>" class="post-title-a"><?php $data->article_title();?></a></h3>
+																<p><?php echo elliStr($data->ar_description,200); ?> .. <a href="">Read More</a></p>
+																<div class="article-add-info">posted in <a href="#"><?php $data->article_section();?></a>  <i class="fa fa-calendar"></i> <?php $data->article_published_data();?></div>
+															</div>
+														</div>
+													</li>
+												<?php
+														}// end of while loop
+													else:
+												?>
+													<li>
+														<div class="row">
+															<div class="column-xsmall-3 padd0 post-image-small"> <img src="images/5-Elements-of-Websites-that-Convert-110.jpg"></div>
+															<div class="column-xsmall-9">
+																<h3 class="post-list-title"><a href="#" class="post-title-a">No Posts Found</a></h3>
+																<p>No posts Found</p>
+																<div class="article-add-info">posted in <a href="#">NONE</a>  <i class="fa fa-calendar"></i> 4/2/2014</div>
+															</div>
+														</div>
+													</li>
+												<?php
+													endif;
+												?>
 							    		 	</ul>
-							    		 	<nav class="pagination">
-							    		 		<ul>
-							    		 			<li>Page 1 of 15 :</li>
-							    		 			<li> <a href="http://techstream.org/all-articles?page=2"><i class="fa fa-chevron-left"></i></a></li>
-							    		 			<li class="active"><a> 1</a></li>
-							    		 			<li><a href="http://techstream.org/all-articles?page=2">2</a></li>
-							    		 			<li><a href="http://techstream.org/all-articles?page=3">3</a></li>
-							    		 			<li><a href="http://techstream.org/all-articles?page=4">4</a></li>
-							    		 			<li><a href="http://techstream.org/all-articles?page=5">5</a></li>
-							    		 			<li class="space">...</li>
-							    		 			<li><a href="http://techstream.org/all-articles?page=15">15</a></li>
-							    		 			<li> <a href="http://techstream.org/all-articles?page=2"><i class="fa fa-chevron-right"></i></a></li>
-							    		 		</ul>
-							    		 	</nav><!-- end of class="pagination" -->
+											<?php
+											if(article_exist()): 
+												pagination($post_per_page, $start, False, 'Bits');
+											endif;
+											?>
+							    		 	
+							    		 	
 							    		 </div>
 							    	</div>
 							    </div>

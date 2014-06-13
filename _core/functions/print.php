@@ -1,73 +1,115 @@
 <?php 
-function sitemap($section,$subsection){
-	if(is_numeric($subsection)){
-		 $result=mysql_query("SELECT * FROM data where ( SEC ='$section')");
-			 
-	}else{
-		 $result=mysql_query("SELECT * FROM data where ( SEC ='$section' and SUBSEC='$subsection')");
-	}
-	while($row = mysql_fetch_array($result, MYSQL_ASSOC )){
-		echo "<li> <a href=\"http://techstream.org/".$row['LINK']."\">".$row['TITLE']."</a></li>";
-	} 
-}
+/*
+* Contains the functions dealing with intenal processing and produces a HTML out put on its own 
+*/
 
-function archives($section){
-	echo "<div class=\"projects\">";
-	 $result=mysql_query("SELECT * FROM data where ( SEC ='$section')");
-	while($row = mysql_fetch_array($result, MYSQL_ASSOC )){
-		echo "<p> <a href=\"http://techstream.org/".$row['LINK']."\"><time>".date('M-d-Y',strtotime($row['DATE'] ))."</time>".$row['TITLE']."</a></p>";
-	} 
-	echo "</div>";
-}
 
-function AllArticles($section,$subsection,$url){
-	if(isset($url)==false){$url="index.php";}
-	echo "<div id=\"archives\"> "; 
-	if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
-	$start_from = ($page-1) * 20;
-	if(is_numeric($subsection)== false && is_numeric($section)== false){
-		$rr=mysql_query("SELECT * FROM data where SEC='$section' and SUBSEC='$subsection' ORDER BY DATE DESC  LIMIT $start_from, 20");
-	}elseif(is_numeric($section)==false){
-		$rr=mysql_query("SELECT * FROM data where SEC='$section' ORDER BY DATE DESC  LIMIT $start_from, 20");
+function pagination($limit, $start=0,$option = FALSE) {
+
+/**
+*  Last Published Article
+*
+* Returns the unique ID of last Published article according to calender
+*
+* Arguments ( $selection , <category> )
+* --------------------------------------
+*
+* $url 		 -> Url for 
+* $limit 	 -> Number of results to print / display
+* $start 	 -> Index number to start
+* $option    -> True  : Selects the last post from the specified category
+*			 -> False : Selects the last post excluding the specified category 
+*				
+*				NB : TO select from all category use 'False' with no arguments,
+*					 Default argument for $option is set to FALSE to facilitate
+*					 use of function without any arguments.
+*
+**/
+
+	$current_page = $start / $limit ;
+	if($current_page < 2 )
+		$current_page = 1;
+
+	$func_num_args = func_num_args();
+	$func_get_args = func_get_args(); 
+
+	unset($func_get_args[0]);
+	unset($func_get_args[1]);
+	unset($func_get_args[2]);
+	//unset($func_get_args[3]);
+
+	if($option == true){
+		if($func_num_args > 3){
+			$fields =' SEC = \''.implode('\' OR SEC = \'',$func_get_args).'\'';
+			$query= "SELECT COUNT(SL_NO) FROM data WHERE $fields AND ARTICLE_STATUS=1";
+		}else
+			return 0;
 	}else{
-		$rr=mysql_query("SELECT * FROM data ORDER BY DATE DESC  LIMIT $start_from, 20");
+		if($func_num_args>3){
+			$fields =' SEC != \''.implode('\' AND SEC != \'',$func_get_args).'\'';
+			$query= "SELECT COUNT(SL_NO) FROM data WHERE $fields AND ARTICLE_STATUS=1";
+		}else
+			$query= "SELECT COUNT(SL_NO) FROM data WHERE ARTICLE_STATUS=1";
 	}
-	while($row = mysql_fetch_array($rr, MYSQL_ASSOC )){
-		echo "<div class=\"ts-post\">";		//Image Holder
-		echo" <a href=\"http://techstream.org/" .$row['LINK']. "\"><h5>".$row['TITLE']."</h5></a>";
-		echo "<div class=\"image\"><a href=\"http://techstream.org/".$row['LINK']."\"><img src=\"http://ns2.techstream.org/".$row['IMG110']."\" alt=\"".$row['TITLE']."\"/></a></div>";		//Time 
-		echo "<div class=\"detail\">Posted On<time>".date('M-d-Y',strtotime($row['DATE'] ))."</time></div>";// description tag
-		echo "<div class=\"description\">";		
-		echo"<p>".elliStr($row['DES'], 240)."......<a href=\"http://techstream.org/" .$row['LINK']. "\" class=\"read_more\">READ MORE</a>";
-		echo"</div>"; 		// End of Description
-		echo"</div> ";		//End of New Post
-	}
-	echo "</div>";
-	// counting the page
-	if(is_numeric($subsection)== false && is_numeric($section)== false){
-		$rr=mysql_query("SELECT COUNT(TITLE) FROM data where SEC='$section' and SUBSEC='$subsection' ORDER BY DATE DESC  LIMIT $start_from, 20");
-	}elseif(is_numeric($section)==false){
-		$sql = "SELECT COUNT(TITLE) FROM data where SEC='$section'";
-	}else{
-		$sql = "SELECT COUNT(TITLE) FROM data";
-	}
-	
-	$rs_result = mysql_query($sql);
-	$row = mysql_fetch_row($rs_result);
-	$total_records = $row[0];
-	$total_pages = ceil($total_records / 20);	
-	echo "\n<div id=\"page_numbers\">"; 
-		echo "\n<ul>";
-			echo"<li class=\"page_info\">Page 1 of $total_pages</li>";
-			for ($i=1; $i<=$total_pages; $i++) {
-				if($i==$page)
-					echo "<li class=\"active_page\"><a href='".$url."?page=".$i."' >".$i."</a> </li>";
+
+
+	$data =mysql_query($query);
+
+	$total_post = mysql_result($data,0);
+	$total_page = ceil($total_post/$limit);
+
+	$current_pages_to_show = 3;
+	$custom_range = round($current_pages_to_show/2);										// _________________ DOC __________________________
+
+	if($total_page > 1):
+?>
+
+<nav class="pagination">
+	<ul>
+		<li>Page <?php echo $current_page ?> of <?php echo $total_page ?> :</li>
+<?php 
+	if($current_page > 1):
+?>
+		<li><a href="<?php echo $url."?page=".($current_page-1) ?> "><i class="fa fa-chevron-left"></i></a></li>
+<?php 
+	endif; 
+	if ($current_page >= ($current_pages_to_show-1)):
+?>
+		<li><a href="<?php echo $url ?>">1</a></li>
+		<li class="space">...</li>
+<?php 
+	endif;
+	for($i = $current_page - $custom_range; $i <= $current_page + $custom_range; $i++) {
+		if ($i > 1 && $i <= $total_page) {
+			if($i == $current_page) {
+				echo "<li class='active'><a>$i</a></li>";
+			}
+			else {
+				echo '<li><a ';
+
+				if($i!=1)
+					echo 'href="'.$url.'?page='.$i.'"';
 				else
-					echo "<li><a href='".$url."?page=".$i."' >".$i."</a> </li>";
-			};
-		echo "\n</li>";
-	echo "\n</div>";
-		 
+					echo 'href="'.$url.'"'; 
+
+				echo '>'.$i.'</a></li>';
+			}
+		}
+	}
+	if (($current_page+$custom_range) < ($total_page)):
+ ?>
+		<li class="space">...</li>
+		<li><a href="<?php echo $url."&page=".$total_page ?> "><?php echo $total_page ?></a></li>
+<?php
+	endif;
+	if($current_page!= $total_page):
+?>
+		<li> <a href="<?php echo $url."?page=".($current_page + 1) ?>"><i class="fa fa-chevron-right"></i></a></li>
+<?php endif; ?>
+	</ul>
+</nav>		
+<?php
+	endif;
 }
 
 ?>

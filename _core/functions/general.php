@@ -150,13 +150,19 @@ function elliStr($s,$n) {
 	}
 } 
 
-function static_url($data = 'images' ){
+function static_url($data = 'images', $print = 0 ){
     if(strcmp($data, 'images') == 0)
-        echo "http://ns2.techstream.org/images/";
+        $url =  "http://ns2.techstream.org/images/";
     elseif (strcmp($data, 'img') == 0) 
-        echo "http://ns2.techstream.org/";
+        $url =  "http://ns2.techstream.org/";
     else
-        echo "http://techstream.org/";
+        $url =  "http://techstream.org/";
+
+    if($print == 0){
+        echo $url;
+    }else{
+        return $url;
+    }
 }
 
 	
