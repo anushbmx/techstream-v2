@@ -55,63 +55,53 @@ function pagination($limit, $start=0,$option = FALSE) {
 
 	$data =mysql_query($query);
 
-	$total_post = mysql_result($data,0);
-	$total_page = ceil($total_post/$limit);
+	$posts_per_page = $limit;
 
-	$current_pages_to_show = 3;
-	$custom_range = round($current_pages_to_show/2);										// _________________ DOC __________________________
+	$numposts = mysql_result($data,0);
+	$max_page = ceil($numposts/$posts_per_page);
 
-	if($total_page > 1):
-?>
 
-<nav class="pagination">
-	<ul>
-		<li>Page <?php echo $current_page ?> of <?php echo $total_page ?> :</li>
-<?php 
-	if($current_page > 1):
-?>
-		<li><a href="<?php echo $url."?page=".($current_page-1) ?> "><i class="fa fa-chevron-left"></i></a></li>
-<?php 
-	endif; 
-	if ($current_page >= ($current_pages_to_show-1)):
-?>
-		<li><a href="<?php echo $url ?>">1</a></li>
-		<li class="space">...</li>
-<?php 
-	endif;
-	for($i = $current_page - $custom_range; $i <= $current_page + $custom_range; $i++) {
-		if ($i > 1 && $i <= $total_page) {
-			if($i == $current_page) {
-				echo "<li class='active'><a>$i</a></li>";
+
+	$url = ""; 	// If any string mentioned will be prepeneded to the anchor tags below.
+	
+	$pages_to_show = 6;
+
+	$custom_range = round($pages_to_show/2);
+
+	if($max_page > 1) {
+		echo '<nav class="pagination"><ul><li>Page '.$current_page.' of '.$max_page.' : </li>';
+		if($current_page!= 1){
+			echo '<li><a ';
+			if($current_page!=2){
+				echo 'href="'.$url.'?page='.($current_page-1).'"';
+			}else{
+				echo 'href="'.$url.'"'; 
 			}
-			else {
-				echo '<li><a ';
-
-				if($i!=1)
-					echo 'href="'.$url.'?page='.$i.'"';
-				else
-					echo 'href="'.$url.'"'; 
-
-				echo '>'.$i.'</a></li>';
+			echo '><i class="fa fa-chevron-left"></i></a></li>';
+		}
+		if ($current_page >= ($pages_to_show-1)) {
+			echo '<li><a href="'.$url.'">1</a></li><li class="space">...</li>';
+		}
+		for($i = $current_page - $custom_range; $i <= $current_page + $custom_range; $i++){
+			if ($i >= 1 && $i <= $max_page){
+				if($i == $current_page) {
+					echo '<li class="active"><a>'.$i.'</a></li>';
+				}else{
+					echo '<li><a ';
+					if($i!=1){ echo 'href="'.$url.'?page='.$i.'"'; }else {echo 'href="'.$url.'"'; }
+					echo '>'.$i.'</a></li>';
+				}
 			}
 		}
-	}
-	if (($current_page+$custom_range) < ($total_page)):
- ?>
-		<li class="space">...</li>
-		<li><a href="<?php echo $url."&page=".$total_page ?> "><?php echo $total_page ?></a></li>
-<?php
-	endif;
-	if($current_page!= $total_page):
-?>
-		<li> <a href="<?php echo $url."?page=".($current_page + 1) ?>"><i class="fa fa-chevron-right"></i></a></li>
-<?php endif; ?>
-	</ul>
-</nav>		
-<?php
-	endif;
-}
+		if (($current_page+$custom_range) < ($max_page))
+			echo '<li class="space">...</li><li><a href="'.$url.'?page='.$max_page.'">'.$max_page.'</a></li>';
+		
+		if($current_page!= $max_page)
+			echo '<li> <a href="'.$url.'?page='.($current_page+1).'"><i class="fa fa-chevron-right"></i></a></li>';
+		echo '</ul></nav>';
 
+	}
+}
 ?>
 
 
