@@ -56,14 +56,10 @@ function pagination($limit, $start=0,$option = FALSE) {
 	$data =mysql_query($query);
 
 	$posts_per_page = $limit;
-
 	$numposts = mysql_result($data,0);
-	$max_page = ceil($numposts/$posts_per_page);
 
-
-
+	$max_page = floor($numposts/$posts_per_page);
 	$url = ""; 	// If any string mentioned will be prepeneded to the anchor tags below.
-	
 	$pages_to_show = 6;
 
 	$custom_range = round($pages_to_show/2);
@@ -102,6 +98,8 @@ function pagination($limit, $start=0,$option = FALSE) {
 
 	}
 }
+
+
 ?>
 
 

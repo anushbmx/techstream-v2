@@ -5,7 +5,22 @@
 		$title -> The page title of serving webpage, if not set Default value will be printed.
 		$template -> Used to load Custome CSS/JS or any additional files. If not set Default styles will only be loaded.
 	*/
+	include('_core/init.php');
 	$template=0;
+	$post_per_page = 10;
+
+	if (empty($_GET["page"])== true && isset($_GET["page"]) == false ) {
+		$page=0;
+		$start = 0;
+	}else{
+		$page=$_GET["page"];
+		$start =  $page * $post_per_page;	//Sets the starting post from the page number
+		if($page < 2){
+			$page = 0;
+			$start = 0;
+		}
+		
+	}	
 	include('_includes/header.php');
 ?>
 		<div class="content">
@@ -64,75 +79,37 @@
 							    	<div class="row">
 							    		 <div class="column-small-12 padd0">
 							    		 	<ul class="bit bit-list">
-						        				<li>
-						        					<a href="#">
-						        						<h3 class="bit-title">Fix HTML HEIGHT</h3>
-						        						<span class="section-link">in Javascript</span>
-						        					</a>
-						        				</li>
-						        				<li>
-						        					<a href="#">
-						        						<h3 class="bit-title">Max height in CSS</h3>
-						        						<span class="section-link">in CSS</span>
-						        					</a>
-						        				</li>
-						        				<li>
-						        					<a href="#">
-						        						<h3 class="bit-title">Date in HTML</h3>
-						        						<span class="section-link">in HTML5</span>
-						        					</a>
-						        				</li>
-						        				<li>
-						        					<a href="#">
-						        						<h3 class="bit-title">Fix HTML HEIGHT</h3>
-						        						<span class="section-link">in Javascript</span>
-						        					</a>
-						        				</li>
-						        				<li>
-						        					<a href="#">
-						        						<h3 class="bit-title">Max height in CSS</h3>
-						        						<span class="section-link">in CSS</span>
-						        					</a>
-						        				</li>
-						        				<li>
-						        					<a href="#">
-						        						<h3 class="bit-title">Date in HTML</h3>
-						        						<span class="section-link">in HTML5</span>
-						        					</a>
-						        				</li>
-						        				<li>
-						        					<a href="#">
-						        						<h3 class="bit-title">Fix HTML HEIGHT</h3>
-						        						<span class="section-link">in Javascript</span>
-						        					</a>
-						        				</li>
-						        				<li>
-						        					<a href="#">
-						        						<h3 class="bit-title">Max height in CSS</h3>
-						        						<span class="section-link">in CSS</span>
-						        					</a>
-						        				</li>
-						        				<li>
-						        					<a href="#">
-						        						<h3 class="bit-title">Date in HTML</h3>
-						        						<span class="section-link">in HTML5</span>
-						        					</a>
-						        				</li>
+							    		 		<?php
+												if(article_exist()): 
+													$article_list = article_published($post_per_page, $start, True, 'Bits');
+													while($article_id = mysql_fetch_array($article_list, MYSQL_ASSOC )){
+														$data = article_data($article_id['SL_NO'])
+												?>
+													<li>
+							        					<a href="<?php static_url('main'); $data->article_url();?>">
+							        						<h3 class="bit-title"><?php $data->article_title();?></h3>
+							        						<span class="section-link"><?php $data->article_sub_section(); ?> </span>
+							        					</a>
+						        					</li>
+												<?php
+														}// end of while loop
+													else:
+												?>
+													<li>
+							        					<a href="#">
+							        						<h3 class="bit-title">No Data Found</h3>
+							        						<span class="section-link">No data Found</span>
+							        					</a>
+						        					</li>
+												<?php
+													endif;
+												?>
 						        			</ul>
-							    		 	<nav class="pagination">
-							    		 		<ul>
-							    		 			<li>Page 1 of 15 :</li>
-							    		 			<li> <a href="http://techstream.org/all-articles?page=2"><i class="fa fa-chevron-left"></i></a></li>
-							    		 			<li class="active"><a> 1</a></li>
-							    		 			<li><a href="http://techstream.org/all-articles?page=2">2</a></li>
-							    		 			<li><a href="http://techstream.org/all-articles?page=3">3</a></li>
-							    		 			<li><a href="http://techstream.org/all-articles?page=4">4</a></li>
-							    		 			<li><a href="http://techstream.org/all-articles?page=5">5</a></li>
-							    		 			<li class="space">...</li>
-							    		 			<li><a href="http://techstream.org/all-articles?page=15">15</a></li>
-							    		 			<li> <a href="http://techstream.org/all-articles?page=2"><i class="fa fa-chevron-right"></i></a></li>
-							    		 		</ul>
-							    		 	</nav><!-- end of class="pagination" -->						        			
+							    		 	<?php
+											if(article_exist()): 
+												pagination($post_per_page, $start, True, 'Bits');
+											endif;
+											?>			        			
 							    		 </div>
 							    	</div>
 							    </div>

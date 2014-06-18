@@ -21,8 +21,6 @@
 		}
 		
 	}	
-
-	
 	include('_includes/header.php');
 
 ?>
