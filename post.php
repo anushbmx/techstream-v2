@@ -6,6 +6,8 @@
 		$template -> Used to load Custome CSS/JS or any additional files. If not set Default styles will only be loaded.
 	*/
 	$template=1;
+
+	$article_id = 0145;
 	include('_includes/header.php');
 ?>
 		<div class="content">

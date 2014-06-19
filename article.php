@@ -75,7 +75,7 @@
 													else
 														$article_list = article_published($post_per_page, $start, True, $category_data->cat_name);
 													while($article_id = mysql_fetch_array($article_list, MYSQL_ASSOC )){
-														$data = article_data($article_id['SL_NO'])
+														$data = article_data($article_id['SL_NO']);
 												?>
 													<li>
 												<?php if($list_template == 1 ):?>
