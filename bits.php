@@ -8,7 +8,7 @@
 	include('_core/init.php');
 	$template=0;
 
-	$category_url = "Bits";
+	$category_url = "all-articles";
 	$current_cat_id = category_id_from_url($category_url);
 	$category_data = category_data($current_cat_id);
 
@@ -70,7 +70,10 @@
 							    		 	>
 							    		 		<?php
 												if(article_exist()): 
-													$article_list = article_published($post_per_page, $start, True, $category_data->cat_name);
+													if($category_data->cat_url == "all-articles")
+														$article_list = article_published($post_per_page, $start, False, 'Bits');
+													else
+														$article_list = article_published($post_per_page, $start, True, $category_data->cat_name);
 													while($article_id = mysql_fetch_array($article_list, MYSQL_ASSOC )){
 														$data = article_data($article_id['SL_NO'])
 												?>
@@ -119,7 +122,10 @@
 						        			</ul>
 							    		 	<?php
 											if(article_exist()): 
-												pagination($post_per_page, $start, $category_data->cat_url, True, $category_data->cat_name);
+												if($category_data->cat_url == "all-articles")
+														pagination($post_per_page, $start, $category_data->cat_url, False, 'Bits');
+												else
+													pagination($post_per_page, $start, $category_data->cat_url, True, $category_data->cat_name);
 											endif;
 											?>			        			
 							    		 </div>
