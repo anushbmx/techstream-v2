@@ -154,6 +154,48 @@ function social_sharing($article_id) {
 	echo '</ul>';
 }
 
+function article_author($article_id) {
+
+/**
+* Author Information
+*
+* Author Informaion box with social links
+*
+* Arguments ( $article_id )
+* --------------------------------------
+*
+* $article_id 		 -> Article ID
+*
+**/
+
+	$article_id = sanatize($article_id);
+	$data = article_data($article_id);
+	$user_data = user_data($data->ar_author_id);
+
+
+	echo '<div class="about-author">';
+    echo '	<div class="row">';
+    echo '		<h4 class="section-heading" >About the Author</h4>';
+    echo '		<div class="column-xsmall-2 padd0 author-avatar"><img src="'.static_url('img',1).'avatars/'.$user_data['avatar'].'"></div>';
+    echo '		<div class="column-xsmall-10">';
+    echo '			<h3>'.$user_data['first_name'].'</h3>';
+    echo '			<p>'.$user_data['About_Author'].'</p>';
+    echo '			<ul class="author-social">';
+    if(empty($user_data['TW'])==false)
+    	echo '				<li><a href="http://twitter.com/"'.$user_data['TW'].'><i class="fa fa-twitter"></i></a></li>';
+
+    if(empty($user_data['FB'])==false)
+  		echo '				<li><a href="http://facebook.com/'.$user_data['FB'].'"><i class="fa fa-facebook"></i></a></li>';
+
+    if(empty($user_data['DB'])==false)
+    	echo '				<li><a href="http://dribbble.com/'.$user_data['FB'].'"><i class="fa fa-dribbble"></i></a></li>';
+
+    echo '<li><a href="https://plus.google.com/u/0/'.$user_data['GPLUS'].'?rel=author"><i class="fa fa-google-plus"></i></a></li>';
+    echo '			</ul>';
+    echo '		</div>';
+    echo '	</div>';
+    echo '</div>';
+}
 ?>
 
 

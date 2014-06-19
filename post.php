@@ -81,21 +81,7 @@
 						<div class="column-small-11 center">
 							<div class="add-on row">
 							    <div class="column-small-8 add-on-main">
-							    	<div class="about-author">
-								    	<div class="row">
-								    		<h4 class="section-heading" >About the Author</h4>
-								    		<div class="column-xsmall-2 padd0 author-avatar"><img src="images/1349524320012857523456.jpg"></div>
-								    		<div class="column-xsmall-10">
-								    			<p>Anush is a freelance web designer and developer with a passion for interaction design. He founded Tech Stream in mid 2011 to spread the art of web design and programing Skills.</p>
-								    			<ul class="author-social"> 
-								    				<li><i class="fa fa-facebook"></i></li>
-								    				<li><i class="fa fa-twitter"></i></li>
-								    				<li><i class="fa fa-dribbble"></i></li>
-								    			</ul>
-								    		</div>
-								    		
-								    	</div>
-								    </div>
+							    	<?php article_author($article_id); ?>
 							    	<h4 class="section-heading">Comments</h4>
 							    	<div id="comments">
 							    	</div><!-- end of id="comments" -->

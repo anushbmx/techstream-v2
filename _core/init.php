@@ -10,8 +10,10 @@
 	require 'functions/general.php';
 	require 'functions/classes.php';
 	require 'functions/articles.php';
+	require 'functions/users.php';
 	require 'functions/category.php';
 	require 'functions/print.php';
 	require 'functions/null-print.php';
+	
 	
 ?>
