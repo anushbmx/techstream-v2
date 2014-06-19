@@ -4,7 +4,7 @@
 */
 
 
-function pagination($limit, $start=0,$option = FALSE) {
+function pagination($limit, $start=0, $url = NULL, $option = FALSE) {
 
 /**
 *  Last Published Article
@@ -36,7 +36,7 @@ function pagination($limit, $start=0,$option = FALSE) {
 	unset($func_get_args[0]);
 	unset($func_get_args[1]);
 	unset($func_get_args[2]);
-	//unset($func_get_args[3]);
+	unset($func_get_args[3]);
 
 	if($option == true){
 		if($func_num_args > 3){
@@ -58,8 +58,7 @@ function pagination($limit, $start=0,$option = FALSE) {
 	$posts_per_page = $limit;
 	$numposts = mysql_result($data,0);
 
-	$max_page = floor($numposts/$posts_per_page);
-	$url = ""; 	// If any string mentioned will be prepeneded to the anchor tags below.
+	$max_page = ceil($numposts/$posts_per_page);
 	$pages_to_show = 6;
 
 	$custom_range = round($pages_to_show/2);
@@ -99,6 +98,35 @@ function pagination($limit, $start=0,$option = FALSE) {
 	}
 }
 
+function categories_list($name = "All Articles") {
+
+/**
+*  Last Published Article
+*
+* Returns the unique ID of last Published article according to calender
+*
+* Arguments ( $selection , <category> )
+* --------------------------------------
+*
+* $name 		 -> Url for 
+*
+**/
+	$data = array();
+	$query = "SELECT * FROM categories WHERE PARENT_SEC = 0000 AND ACTIVE = 1";
+
+	$data =mysql_query($query);
+	echo '<ul class="cat-list">';
+
+	while($category_data = mysql_fetch_array($data, MYSQL_ASSOC )){
+		$cat_data = category_data($category_data['SL_NO']);
+		echo '			<li> <a href="'.static_url('main',1).$cat_data->cat_url.'"';
+		if($name == $cat_data->cat_name ) 
+			echo 'class = "active" ';
+
+		echo '>'.$cat_data->cat_name.'</a></li>';
+	}
+	echo '</ul>';	
+}
 
 ?>
 

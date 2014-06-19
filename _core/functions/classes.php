@@ -129,4 +129,84 @@ class article {
 
 }
 
+
+class category {
+/**
+* Class category
+*
+* An object to contain all information of an category 
+*
+* Data extraction can be done in two ways.
+*				1. Direct call of variables
+*				2. Function call ( WILL ECHO THE DATA)
+* 
+* When data is required in its raw form the varianles can be called with the object name + varianle suffixing ar_ as prefix
+*
+* Example : category->cat_id;
+*			Will give an output of category ID.
+*
+* When the data is to be displayed function call can be employed with object name + function suffixing article_ as prefix
+*
+* Example :  category->cat_id();
+*			Will print the category ID.	
+*
+**/
+
+// Varianbles for category
+
+	var $cat_id;
+	var $cat_name;
+	var $cat_url;
+	var $cat_desc;
+	var $cat_parent;
+	var $cat_active;
+	var $cat_list_size;
+	var $cat_list_template;
+
+// Constructor Class to initialize the variables of the class
+
+	function category($data){
+
+		$this->cat_id = $data[SL_NO];
+	    $this->cat_name = $data[NAME];
+		$this->cat_url = $data[URL];
+		$this->cat_desc = $data[DESC];
+		$this->cat_parent =	$data[PARENT_SEC];
+		$this->cat_active =	$data[ACTIVE];
+		$this->cat_list_size =	$data[LIST_SIZE];
+		$this->cat_list_template = $data[LIST_TEMPLATE];
+	}
+
+	function category_id(){
+		echo $this->cat_id;
+	}
+
+	function category_name(){
+		echo $this->cat_name;
+	}
+
+	function category_url(){
+		echo $this->cat_url;
+	}
+
+	function category_description(){
+		echo $this->cat_desc;
+	}
+
+	function category_parent(){
+		echo $this->cat_parent;
+	}
+
+	function category_active(){
+		echo $this->cat_active;
+	}
+
+	function category_list_size(){
+		echo $this->cat_list_size;
+	}
+
+	function category_list_template(){
+		echo $this->cat_list_template;
+	}
+}
 ?>
