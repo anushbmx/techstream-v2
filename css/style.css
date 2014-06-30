@@ -484,7 +484,7 @@ a.tw-twitter:hover{
 	width: 10%;
 }
 
-.add-on-main{
+.add-on-main, .add-on-bits{
 	border-right: 1px solid #E5E5E5;
 	min-height: 200px;
 }

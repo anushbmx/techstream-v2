@@ -8,7 +8,7 @@
 	include('_core/init.php');
 	$template=0;
 
-	$category_url = "all-articles";
+	$category_url = "Bits";
 	$current_cat_id = category_id_from_url($category_url);
 	$category_data = category_data($current_cat_id);
 
