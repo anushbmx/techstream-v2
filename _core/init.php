@@ -15,5 +15,6 @@
 	require 'functions/print.php';
 	require 'functions/null-print.php';
 
-	$GLOBALS['ad'] = 0;
+	$GLOBALS['ad'] = false;
+	$GLOBALS['search'] = false;
 ?>

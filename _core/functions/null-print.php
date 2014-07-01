@@ -11,22 +11,25 @@ function main_search_box() {
 * Prints the FUll width search box
 *
 **/
+	if($GLOBALS['search'] == false):
 ?>
-<div id="search-container">
-	<div class="inner-container">
-		<div class="row">
-			<div class="column-small-11 center">
-				<div class="top-search">
-					<form action="<?php echo static_url('main')."/search.php" ?>">
-						<input type="search" class="search-box" name="q" placeholder="Search for" >
-						<input type="submit" value="search" class="search-button">
-					</form>
+		<div id="search-container">
+			<div class="inner-container">
+				<div class="row">
+					<div class="column-small-11 center">
+						<div class="top-search">
+							<form action="<?php echo static_url('main')."/search.php" ?>">
+								<input type="search" class="search-box" name="q" placeholder="Search for" >
+								<input type="submit" value="search" class="search-button">
+							</form>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-</div><!-- end of id="search-container" -->
+		</div><!-- end of id="search-container" -->
 <?php 
+	$GLOBALS['search']  = true;
+	endif;
 }
 
 function ad_box() {
