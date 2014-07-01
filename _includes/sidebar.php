@@ -25,16 +25,7 @@
 	ad_box();
 	if($GLOBALS['search'] == false):
 ?>
-		<h4 class="section-heading hide-large view-small" ><i class="fa fa-level-down"></i> Sideabar</h4>
-		<div class="search">
-			<h4 class="section-heading" ><i class="fa fa-search"></i> Search</h4>
-			<form class="searchbar" action="http://techstream.org/search.php" method="get">
-		        <input name="q" required="" placeholder="Search" type="text">
-		        <input class="submit" value="search" type="submit">
-		        <p class="powered_by">Powered by <a href="http://www.google.com/cse/">Google Custom Search</a></p>
-		    </form>
-		</div>
-		<!-- End of Google Custom Search -->
+	o>
 <?php
 		$GLOBALS['search']  = true;
 	endif;
