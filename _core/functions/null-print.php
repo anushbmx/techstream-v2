@@ -17,8 +17,8 @@ function main_search_box() {
 		<div class="row">
 			<div class="column-small-11 center">
 				<div class="top-search">
-					<form action="">
-						<input type="search" class="search-box" placeholder="Search for" >
+					<form action="<?php echo static_url('main')."/search.php" ?>">
+						<input type="search" class="search-box" name="q" placeholder="Search for" >
 						<input type="submit" value="search" class="search-button">
 					</form>
 				</div>

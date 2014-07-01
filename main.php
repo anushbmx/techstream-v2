@@ -119,7 +119,7 @@
 							    		 	<ul class="post-list">
 							    		 	<?php
 												if(article_exist()): 
-								            		$article_list = article_published(3,1,False,'Bits');
+								            		$article_list = article_published(5,1,False,'Bits');
 								            		while($article_id = mysql_fetch_array($article_list, MYSQL_ASSOC )){
 							    		 				echo '<li>';
 						        						post_list($article_id['SL_NO']);
