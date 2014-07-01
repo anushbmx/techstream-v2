@@ -15,30 +15,63 @@
 			|Template Value | Description
 			-----------------------------------------------------
 			| 	  0/Null	| Normal page Template 				|
-			|		1 		| Pages with code 	 				|
+			|		1 		| Article 	 				|
 			-----------------------------------------------------
 		$code
 */
 
 ?>
 <!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
-	<title>Index Home</title>
-	
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/grid.css">
-	<link rel="stylesheet" href="css/font-awesome.css">
-	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
-	<link rel="stylesheet" href="css/fonts.css">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta http-equiv="content-type" content="text/html;" />
+	<meta name="robots" content="index,follow" />
+	<meta name="viewport" content="initial-scale=1.0 maximum-scale=1.0 user-scalable=no" />
+
+
 	<?php 
 		if(isset($template)):
 			if ($template == 1):
 	?>	
+	<title><?php $data->article_title();?></title>
+	<meta name="description" content="<?php $data->article_description();?>"/>
+	<link rel="canonical" href="<?php static_url('main'); $data->article_url();?>" />
+
+	<!-- Open Graph -->
+	<meta property="og:title" content="<?php $data->article_title();?>" />
+	<meta property="og:image" content="<?php static_url('images'); $data->article_image();?>" />
+	<meta property="og:site_name" content="Tech Stream" />
+	<meta property="og:description" content="<?php $data->article_description();?>"/>
+
+	<!-- Twitter -->
+	<meta name="twitter:title" content="<?php $data->article_title();?>" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:image" content="<?php static_url('images'); $data->article_image();?>" />
+	<meta name="twitter:site" content="@techstream_org" />
+	<meta name="twitter:creator" content="@techstream_org" />
+	<meta name="twitter:domain" content="techstream.org" />
+    <meta name="twitter:description" content="<?php $data->article_description();?>"/>
+
+
 	<link rel="stylesheet" href="css/highlight/default.css">	
+	<?php
+		else:
+	?>
+		<title>New</title>
 	<?php
 		endif;
 	endif;
 	?>
+
+
+
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/grid.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css" media="all">
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+	<link rel="stylesheet" type="text/css" href="css/fonts.css" media="all">
 </head>
 
 <body>
