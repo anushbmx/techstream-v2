@@ -94,20 +94,7 @@
 						</div>
 					</div>					
 				</header><!-- end of class = "content-header" -->
-				<div id="search-container">
-					<div class="inner-container">
-						<div class="row">
-							<div class="column-small-11 center">
-								<div class="top-search">
-									<form action="">
-										<input type="search" class="search-box" placeholder="Search for" >
-										<input type="submit" value="search" class="search-button">
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div><!-- end of id="search-container" -->
+				<?php main_search_box(); ?>
 				<div class="inner-container">
 					<div class="row">
 						<div class="column-small-11 center">						    
@@ -127,7 +114,7 @@
 							    		 			}// end of while loop
 							    		 	?>
 							    		 		<li class="more-post">
-							    		 			<a href="">More Post... <i class="fa fa-long-arrow-right"></i></a>
+							    		 			<a href="<?php echo static_url('main') ?>all-articles">More Post... <i class="fa fa-long-arrow-right"></i></a>
 							    		 		</li>
 							    		 	<?php
 							    		 		else:

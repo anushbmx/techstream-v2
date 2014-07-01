@@ -215,7 +215,7 @@ function post_list($article_id) {
 		$data = article_data($article_id);
 
 		echo '<div class="row">';
-		echo '	<div class="column-xsmall-3 padd0 post-image-small"> <img src="'.static_url('img',1).$data->ar_image_small.'"></div>';
+		echo '	<div class="column-xsmall-3 padd0 post-image-small"><a href="'.static_url('main',1).$data->ar_url.'" class="post-title-a"><img src="'.static_url('img',1).$data->ar_image_small.'"></a></div>';
 		echo '	<div class="column-xsmall-9">';
 		echo '		<h3 class="post-list-title"><a href="'.static_url('main',1).$data->ar_url.'" class="post-title-a">'.$data->ar_title.'</a></h3>';
 		echo '		<p>'.elliStr($data->ar_description,200).' .. <a href="'.static_url('main',1).$data->ar_url.'">Read More</a></p>';
