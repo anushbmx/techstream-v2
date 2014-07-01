@@ -17,42 +17,14 @@
 			| 		1 		| Template with ads					|
 			|		2 		| Template with ads 				|
 			-----------------------------------------------------
-		$code
 */
 
+/*
+  #####  Ad BOX ###
+*/
+		ad_box();
 ?>
 	<h4 class="section-heading hide-large view-small" ><i class="fa fa-level-down"></i> Sideabar</h4>
-	<?php 
-		if(isset($sidebar_template)): 
-			if ($sidebar_template == 1): 
-	?>	
-	<div class="ad ad-hor">
-		<h4 class="section-heading" ><i class="fa fa-eye-slash"></i> Advertisement</h4>						    
-		<div class="bsap_1293798 bsap" id="bsap_1293798">
-			<div class="bsa_it one">
-				<div class="ad1 odd" id="bsa_4751333">
-	        		<a target="_blank">
-		        		<span class="bsa_it_i">
-		        		<img src="images/sample.jpg" alt="Webydo" height="100" width="130"></span>
-	        		</a>
-
-	        		<a target="_blank" class="text">
-	        			<span class="bsa_it_t">Webydo</span>
-	        			<span class="bsa_it_d">40K Professionals are Disrupting the Web Design Industry. Create Your FREE Site.</span>
-	        		</a>
-	        		<div style="clear:both"></div>
-	    		</div>
-	    		<span class="bsa_it_p">
-	    			<a target="_blank">ads by BSA</a>
-	    		</span>
-			</div>
-		</div>
-		<p class="powered_by">Powered by <a href="http://www.adpacks.com">Ad Packs</a></p>
-	</div>
-	<?php
-			endif;
-		endif;
-	?>
 	<div class="search">
 		<h4 class="section-heading" ><i class="fa fa-search"></i> Search</h4>
 		<form class="searchbar" action="http://techstream.org/search.php" method="get">

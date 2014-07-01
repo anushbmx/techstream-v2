@@ -196,6 +196,73 @@ function article_author($article_id) {
     echo '	</div>';
     echo '</div>';
 }
+
+function post_list($article_id) {
+
+/**
+* Post List Printing
+*
+* Prints Posts in list templates
+*
+* Arguments ( $article_id )
+* --------------------------------------
+*
+* $article_id 		 -> Article ID
+*
+**/
+
+	if(isset($article_id) == true):
+		$data = article_data($article_id);
+
+		echo '<div class="row">';
+		echo '	<div class="column-xsmall-3 padd0 post-image-small"> <img src="'.static_url('img',1).$data->ar_image_small.'"></div>';
+		echo '	<div class="column-xsmall-9">';
+		echo '		<h3 class="post-list-title"><a href="'.static_url('main',1).$data->ar_url.'" class="post-title-a">'.$data->ar_title.'</a></h3>';
+		echo '		<p>'.elliStr($data->ar_description,200).' .. <a href="'.static_url('main',1).$data->ar_url.'">Read More</a></p>';
+		echo '		<div class="article-add-info">posted in <a href="'.static_url('main',1).$data->ar_section_url.'">'.$data->ar_section.'</a>  <i class="fa fa-calendar"></i>'.date('F jS Y',strtotime($data->ar_created_date)).'</div>';
+		echo '	</div>';
+		echo '</div>';
+	else:
+		echo '<div class="row">';
+		echo '	<div class="column-xsmall-3 padd0 post-image-small"> <img src="images/5-Elements-of-Websites-that-Convert-110.jpg"></div>';
+		echo '	<div class="column-xsmall-9">';
+		echo '		<h3 class="post-list-title"><a href="#" class="post-title-a">No Posts Found</a></h3>';
+		echo '		<p>No posts Found</p>';
+		echo '		<div class="article-add-info">posted in <a href="#">NONE</a>  <i class="fa fa-calendar"></i> 4/2/2014</div>';
+		echo '	</div>';
+		echo '</div>';
+	endif;
+
+}
+
+function bits_list($article_id) {
+
+/**
+* Bits List Printing
+*
+* Prints Bits in list templates
+*
+* Arguments ( $article_id )
+* --------------------------------------
+*
+* $article_id 		 -> Article ID
+*
+**/
+	if(isset($article_id) == true):
+		$data = article_data($article_id);
+		echo '<a href="'.static_url('main',1).$data->ar_url.'">';
+		echo '	<h3 class="bit-title">'.$data->ar_title.'</h3>';
+		echo '	<span class="section-link">'.$data->ar_sub_section.'</span>';
+		echo '</a>';
+	else:
+		echo '<a href="#">';
+		echo '	<h3 class="bit-title">No Data Found</h3>';
+		echo '	<span class="section-link">No data Found</span>';
+		echo '</a>';
+	endif;
+
+}
+
 ?>
 
 

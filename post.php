@@ -9,7 +9,7 @@
 	include('_core/init.php');
 	$template=1;
 
-	$article_id = 145;
+	$article_id = 135;
 	$data = article_data($article_id);
 	include('_includes/header.php');
 ?>
@@ -34,28 +34,10 @@
 								        	<ul class="post-addon">
 								        		<li><i class="fa fa-folder-open"></i> <a href="<?php static_url('main'); $data->article_section_url();?>"><?php $data->article_section();?></a></li>
 								        		<li><i class="fa fa-calendar"></i> <?php $data->article_published_data();?> </li>
-								        		<li><i class="fa fa-comment"></i> <a href="#comments">comments</a></li>
+								        		<li><i class="fa fa-comment"></i> <a href="<?php static_url('main'); $data->article_url();?>#disqus_thread">Comments</a></li>
 							        		</ul>
-									    	<div class="ad ad-h center-small">
-								        		<div class="bsap_1293798 bsap" id="bsap_1293798">
-									        		<div class="bsa_it one">
-									        			<div class="ad1 odd" id="bsa_4751333">
-											        		<a target="_blank">
-												        		<span class="bsa_it_i">
-												        		<img src="images/sample.jpg" alt="Webydo" height="100" width="130"></span>
-											        		</a>
-
-											        		<a target="_blank" class="text">
-											        			<span class="bsa_it_t">Webydo</span>
-											        			<span class="bsa_it_d">40K Professionals are Disrupting the Web Design Industry. Create Your FREE Site.</span>
-											        		</a>
-											        		<div style="clear:both"></div>
-										        		</div>
-										        		<span class="bsa_it_p">
-										        			<a target="_blank">ads by BSA</a>
-										        		</span>
-									        		</div>
-									        	</div>
+									    	<div class="center-small">
+								        		<?php ad_box() ?>
 								        	</div>
 								        </div><!-- end of class="article-info-container" -->							        	
 							        </div><!-- end of column 2 -->

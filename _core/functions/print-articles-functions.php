@@ -75,7 +75,7 @@ if($sec_data['SEC_LEVEL']==2){$query="SELECT * FROM data  WHERE SUBSEC='".$sec_d
 ?>
 	             <?php bottom_page_ad(); ?>
 
-        </div><!--- class article , roll= article--->        
+        </div><!--- class article , roll= article -->        
         <?php include('_include/sidebar.html')?>
          <div class="newline"></div> 
     </div><!-- content-inner -->

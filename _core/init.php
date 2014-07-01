@@ -14,6 +14,6 @@
 	require 'functions/category.php';
 	require 'functions/print.php';
 	require 'functions/null-print.php';
-	
-	
+
+	$GLOBALS['ad'] = 0;
 ?>

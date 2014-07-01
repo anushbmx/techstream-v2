@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Aleo';
+  src: url('fonts/Aleo-Bold.otf');
+  src: url('fonts/Aleo-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Aleo';
+  src: url('fonts/Aleo-Regular.otf');
+  src: url('fonts/Aleo-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}

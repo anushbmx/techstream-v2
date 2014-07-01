@@ -121,19 +121,9 @@
 												if(article_exist()): 
 								            		$article_list = article_published(3,1,False,'Bits');
 								            		while($article_id = mysql_fetch_array($article_list, MYSQL_ASSOC )){
-								            			$data = article_data($article_id['SL_NO'])
-							    		 	?>
-							    		 		<li>
-							    		 			<div class="row">
-							    		 				<div class="column-xsmall-3 padd0 post-image-small"> <img src="<?php static_url('img'); $data->article_image_small();?>"></div>
-							    		 				<div class="column-xsmall-9">
-							    		 					<h3 class="post-list-title"><a href="<?php static_url('main'); $data->article_url();?>" class="post-title-a"><?php $data->article_title();?></a></h3>
-							    		 					<p><?php echo elliStr($data->ar_description,200); ?> .. <a href="">Read More</a></p>
-							    		 					<div class="article-add-info">posted in <a href="#"><?php $data->article_section();?></a>  <i class="fa fa-calendar"></i> <?php $data->article_published_data();?></div>
-							    		 				</div>
-							    		 			</div>
-							    		 		</li>
-							    		 	<?php
+							    		 				echo '<li>';
+						        						post_list($article_id['SL_NO']);
+								        				echo '</li>';
 							    		 			}// end of while loop
 							    		 	?>
 							    		 		<li class="more-post">
@@ -141,18 +131,9 @@
 							    		 		</li>
 							    		 	<?php
 							    		 		else:
-							    		 	?>
-							    		 		<li>
-							    		 			<div class="row">
-							    		 				<div class="column-xsmall-3 padd0 post-image-small"> <img src="images/5-Elements-of-Websites-that-Convert-110.jpg"></div>
-							    		 				<div class="column-xsmall-9">
-							    		 					<h3 class="post-list-title"><a href="#" class="post-title-a">No Posts Found</a></h3>
-							    		 					<p>No posts Found</p>
-							    		 					<div class="article-add-info">posted in <a href="#">NONE</a>  <i class="fa fa-calendar"></i> 4/2/2014</div>
-							    		 				</div>
-							    		 			</div>
-							    		 		</li>
-							    		 	<?php
+								    		 		echo '<li>';
+						        					post_list();
+						     						echo '</li>';
 							    		 		endif;
 							    		 	?>
 							    		 	</ul>
