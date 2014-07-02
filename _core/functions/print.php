@@ -178,7 +178,7 @@ function article_author($article_id) {
     echo '		<h4 class="section-heading" >About the Author</h4>';
     echo '		<div class="column-xsmall-2 padd0 author-avatar"><img src="'.static_url('img',1).'avatars/'.$user_data['avatar'].'"></div>';
     echo '		<div class="column-xsmall-10">';
-    echo '			<h3>'.$user_data['first_name'].'</h3>';
+    echo '			<h3 itemprop="author" >'.$user_data['first_name'].'</h3>';
     echo '			<p>'.$user_data['About_Author'].'</p>';
     echo '			<ul class="author-social">';
     if(empty($user_data['TW'])==false)

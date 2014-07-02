@@ -25,7 +25,6 @@
 	ad_box();
 	if($GLOBALS['search'] == false):
 ?>
-	o>
 <?php
 		$GLOBALS['search']  = true;
 	endif;
