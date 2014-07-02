@@ -50,7 +50,7 @@
 					<div class="inner-container">
 						<div class="row">
 							<div class="column-small-11 center">
-								<article class="article">
+								<article class="article" itemtype="http://schema.org/Article">
 									<?php $data->article_content();?>
 							    </article>  <!-- end of class="article" -->
 							    <?php  social_sharing($article_id); ?>

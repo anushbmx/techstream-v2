@@ -36,7 +36,7 @@
 						    <div class="add-on row">
 							    <div class="column-small-8 add-on-bits">
 						    		<div id="bits-article">
-										<article class="article">
+										<article class="article" itemtype="http://schema.org/Article">
 											<?php $data->article_content();?>
 										</article>	
 										<?php  social_sharing($article_id); ?>
