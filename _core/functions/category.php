@@ -3,6 +3,24 @@
 * Contains the functions dealing with catagories
 */
 
+function category_active($article_url){
+/**
+*  Article URL Valid
+*
+* Returns the TRUE or FALSE if the URL is a valid post 
+*
+* Arguments ( $article_url )
+* -------------------------------------
+*
+* $article_url -> URL to be inspected
+*
+**/
+
+	$article_url=mysql_real_escape_string($article_url);
+	$qurrey=mysql_query("select count(*) from categories where URL = BINARY('$article_url')");
+	return (mysql_result($qurrey,0) == 1) ? true : false;
+}
+
 function category_id_from_url($url){
 /**
 * Cagegory ID from its URL

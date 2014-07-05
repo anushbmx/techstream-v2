@@ -1,9 +1,43 @@
 <?php
-/*
-* Contains the functions dealing with article 
-*/
 
-function article_valid_url($article_url){
+function wrong_url_redirect($url){
+/**
+*  Wrong URL Redirect
+*
+* Redirects the request to proper URL
+*
+* Arguments ( $url )
+* -------------------------------------
+*
+* $url -> Requested URL
+*
+**/
+	$qurrey=mysql_query("select * from data where LOWER(LINK)='$url'");
+	$data=mysql_fetch_array($qurrey);
+	$location="Location:".static_url('main',1).$data['LINK'];
+	header ('HTTP/1.1 301 Moved Permanently');
+	header($location) ;
+}
+
+function wrong_url($url){
+/**
+*  Wrong URL
+*
+* Returns the TRUE or FALSE if the URL is a requested in wrong order post of Active Articles only
+*
+* Arguments ( $url )
+* -------------------------------------
+*
+* $url -> Requested URL
+*
+**/
+	$url=mysql_real_escape_string($url);
+	$url=strtolower($url);
+	$qurrey=mysql_query("select count(*) from data where LOWER(LINK)='$url' and ARTICLE_STATUS=1");
+	return (mysql_result($qurrey,0) == 1) ? true : false;
+}
+
+function article_inactive($article_url){
 /**
 *  Article URL Valid
 *
@@ -17,7 +51,25 @@ function article_valid_url($article_url){
 **/
 
 	$article_url=mysql_real_escape_string($article_url);
-	$qurrey=mysql_query("select count(*) from data where LINK = BINARY('$url') and ARTICLE_STATUS=1");
+	$qurrey=mysql_query("select count(*) from data where LINK = BINARY('$article_url')");
+	return (mysql_result($qurrey,0) == 1) ? true : false;
+}
+
+function article_active($article_url){
+/**
+*  Article URL Valid
+*
+* Returns the TRUE or FALSE if the URL is a valid post & active
+*
+* Arguments ( $article_url )
+* -------------------------------------
+*
+* $article_url -> URL to be inspected
+*
+**/
+
+	$article_url=mysql_real_escape_string($article_url);
+	$qurrey=mysql_query("select count(*) from data where LINK = BINARY('$article_url') and ARTICLE_STATUS=1");
 	return (mysql_result($qurrey,0) == 1) ? true : false;
 }
 
