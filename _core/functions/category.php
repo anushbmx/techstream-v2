@@ -3,6 +3,45 @@
 * Contains the functions dealing with catagories
 */
 
+function wrong_category($url){
+/**
+*  Category URL Valid
+*
+* Returns the TRUE or FALSE if the URL is a valid Category 
+*
+* Arguments ( $url )
+* -------------------------------------
+*
+* $article_url -> URL to be inspected
+*
+**/
+
+	$url=mysql_real_escape_string($url);
+	$url=strtolower($url);
+	$qurrey=mysql_query("select count(*) from categories where LOWER(URL)='$url'");
+	return (mysql_result($qurrey,0) == 1) ? true : false;
+}
+function wrong_category_redirect($url){
+/**
+*  Wrong URL redirect
+*
+* Redirects the traffic to Proper URL
+*
+* Arguments ( $url )
+* -------------------------------------
+*
+* $article_url -> URL to be inspected
+*
+**/
+
+	$url=strtolower($url);
+	$qurrey=mysql_query("select * from categories where LOWER(URL)='$url'");
+	$row=mysql_fetch_array($qurrey);
+	$location="Location:".static_url('main',1).$row['URL'];
+	header ('HTTP/1.1 301 Moved Permanently');
+	header($location) ;
+}
+
 function category_valid($article_url){
 /**
 *  Article URL Valid

@@ -18,6 +18,8 @@
 			echo "category";
 		}elseif(wrong_url($url) == true){
 			wrong_url_redirect($url);
+		}elseif(wrong_category($url)==true){
+			wrong_category_redirect($url);
 		}
 	}else{
 		echo "404 Lol";
