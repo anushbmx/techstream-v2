@@ -12,6 +12,57 @@
 ?>
 		<div class="content">
 			<div class="content-inner">
+<?php
+				if($data->ar_section == "Bits"):
+?>
+				<header id="content-header">
+					<div class="inner-container">
+						<div class="row">
+							<div class="column-small-11 center">
+								<div class="row">
+									<div class="column-small-8 cat-desc">
+										<h1 class="article-heading"><?php $data->article_title();?></h1>
+										<p><?php $data->article_description();?></p>
+									</div>
+									<div class="column-small-4">
+										<?php ad_box() ?>										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>					
+				</header><!-- end of class = "content-header" -->
+				<div class="inner-container">
+					<div class="row">
+						<div class="column-small-11 center">
+						    <div class="add-on row">
+							    <div class="column-small-8 add-on-bits">
+						    		<div id="bits-article">
+										<article class="article" itemtype="http://schema.org/Article">
+											<?php $data->article_content();?>
+										</article>	
+										<?php  social_sharing($article_id); ?>
+									</div>
+							    </div>
+							 	<div class="column-small-4 sidebar">
+							    	<?php 
+							    		/* 
+							    			Side Bar include.
+
+							    			$sidebar_template -> Define a Sidebar template
+
+
+							    		*/
+							    		include('_includes/sidebar.php');
+							    	?>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+<?php
+				else:
+?>
 				<header id="content-header">
 					<div class="inner-container">
 						<div class="row">
@@ -81,6 +132,7 @@
 						</div>
 					</div>
 				</div>
+<?php 		endif;				?>
 			</div><!-- end of class="content-inner" -->		
 		</div> <!-- end of class="content" -->
 <?php 

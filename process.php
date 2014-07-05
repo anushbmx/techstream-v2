@@ -11,7 +11,7 @@
 	include('_core/init.php');
 	if(isset($_GET['url'])){
 		$url=mysql_real_escape_string($_GET['url']);
-		if(article_valid($url) == true){
+		if(is_article($url) == true){
 			require('post.php');
 		}elseif (category_valid($url) == true) {
 			include('article.php');

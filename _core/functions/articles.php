@@ -72,9 +72,9 @@ function article_inactive($article_url){
 	return (mysql_result($qurrey,0) == 1) ? true : false;
 }
 
-function article_valid($article_url){
+function is_article($article_url){
 /**
-*  Article URL Valid
+*  IS Article 
 *
 * Returns the TRUE or FALSE if the URL is a valid post & active
 *
