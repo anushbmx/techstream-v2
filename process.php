@@ -14,7 +14,7 @@
 		if(is_article($url) == true){
 			require('post.php');
 		}elseif (category_valid($url) == true) {
-			include('article.php');
+			include('category.php');
 		}elseif(wrong_url($url) == true){
 			include('post.php');
 		}elseif(wrong_category($url)==true){
