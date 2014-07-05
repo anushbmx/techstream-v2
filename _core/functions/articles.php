@@ -1,5 +1,22 @@
 <?php
 
+function article_id_from_url($url){
+/**
+*  Article ID
+*
+* Returns Article ID from URL
+*
+* Arguments ( $url )
+* -------------------------------------
+*
+* $url -> Requested URL
+*
+**/
+	$url = sanatize($url);
+	$qurrey = mysql_query("select SL_NO from data WHERE LINK = '$url' ");
+	return mysql_result($qurrey,0);
+}
+
 function wrong_url_redirect($url){
 /**
 *  Wrong URL Redirect

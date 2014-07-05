@@ -12,12 +12,11 @@
 	if(isset($_GET['url'])){
 		$url=mysql_real_escape_string($_GET['url']);
 		if(article_valid($url) == true){
-			echo "article";
-
+			require('post.php');
 		}elseif (category_valid($url) == true) {
-			echo "category";
+			include('article.php');
 		}elseif(wrong_url($url) == true){
-			wrong_url_redirect($url);
+			include('post.php');
 		}elseif(wrong_category($url)==true){
 			wrong_category_redirect($url);
 		}

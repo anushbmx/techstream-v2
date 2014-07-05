@@ -5,11 +5,8 @@
 		$title -> The page title of serving webpage, if not set Default value will be printed.
 		$template -> Used to load Custome CSS/JS or any additional files. If not set Default styles will only be loaded.
 	*/
-
-	include('_core/init.php');
 	$template=1;
-
-	$article_id = 135;
+	$article_id = article_id_from_url($url);
 	$data = article_data($article_id);
 	include('_includes/header.php');
 ?>
