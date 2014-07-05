@@ -55,7 +55,7 @@ function article_inactive($article_url){
 	return (mysql_result($qurrey,0) == 1) ? true : false;
 }
 
-function article_active($article_url){
+function article_valid($article_url){
 /**
 *  Article URL Valid
 *

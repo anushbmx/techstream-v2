@@ -11,10 +11,10 @@
 	include('_core/init.php');
 	if(isset($_GET['url'])){
 		$url=mysql_real_escape_string($_GET['url']);
-		if(article_inactive($url) == true){
+		if(article_valid($url) == true){
 			echo "article";
 
-		}elseif (category_active($url) == true) {
+		}elseif (category_valid($url) == true) {
 			echo "category";
 		}elseif(wrong_url($url) == true){
 			wrong_url_redirect($url);

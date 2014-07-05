@@ -3,7 +3,7 @@
 * Contains the functions dealing with catagories
 */
 
-function category_active($article_url){
+function category_valid($article_url){
 /**
 *  Article URL Valid
 *
