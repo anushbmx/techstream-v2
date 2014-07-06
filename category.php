@@ -39,15 +39,19 @@
 					<div class="inner-container">
 						<div class="row">
 							<div class="column-small-11 center">
+								
 								<div class="row">
-									<?php 
-										categories_list($category_data->cat_name);
-									?>
-								</div>
-								<div class="row">
-									<div class="column-small-10 cat-desc">
-										<h1><?php echo $title; ?></h1>
+									<div class="column-small-8 cat-desc">
+										<div class="row padd0">
+											<?php 
+												categories_list($category_data->cat_name);
+											?>
+										</div>
+										<h1 class="article-heading"><?php echo $title; ?></h1>
 										<p><?php $category_data->category_description(); ?></p>
+									</div>
+									<div class="column-small-4">
+										<?php ad_box() ?>										
 									</div>
 								</div>
 							</div>

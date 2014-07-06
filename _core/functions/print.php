@@ -112,7 +112,7 @@ function categories_list($name = "All Articles") {
 *
 **/
 	$data = array();
-	$query = "SELECT * FROM categories WHERE PARENT_SEC = 0000 AND ACTIVE = 1 AND TYPE = 0";
+	$query = "SELECT * FROM categories WHERE PARENT_SEC = 0000 AND ACTIVE = 1";
 
 	$data =mysql_query($query);
 	echo '<ul class="cat-list">';
