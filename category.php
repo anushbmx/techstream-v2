@@ -100,7 +100,7 @@
 							    		 	<?php
 											if(article_exist()): 
 												if($category_data->cat_url == "all-articles")
-														pagination($post_per_page, $start, $category_data->cat_url, False, 'Bits');
+													pagination($post_per_page, $start, $category_data->cat_url, False, 'Bits');
 												else
 													pagination($post_per_page, $start, $category_data->cat_url, True, $category_data->cat_name);
 											endif;

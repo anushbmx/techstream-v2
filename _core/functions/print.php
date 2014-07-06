@@ -41,15 +41,15 @@ function pagination($limit, $start=0, $url = NULL, $option = FALSE) {
 	if($option == true){
 		if($func_num_args > 3){
 			$fields =' SEC = \''.implode('\' OR SEC = \'',$func_get_args).'\'';
-			$query= "SELECT COUNT(SL_NO) FROM data WHERE $fields AND ARTICLE_STATUS=1";
+			$query= "SELECT COUNT(SL_NO) FROM data WHERE $fields AND STATUS=1 AND TYPE = 0";
 		}else
 			return 0;
 	}else{
 		if($func_num_args>3){
 			$fields =' SEC != \''.implode('\' AND SEC != \'',$func_get_args).'\'';
-			$query= "SELECT COUNT(SL_NO) FROM data WHERE $fields AND ARTICLE_STATUS=1";
+			$query= "SELECT COUNT(SL_NO) FROM data WHERE $fields AND STATUS=1 AND TYPE = 0";
 		}else
-			$query= "SELECT COUNT(SL_NO) FROM data WHERE ARTICLE_STATUS=1";
+			$query= "SELECT COUNT(SL_NO) FROM data WHERE STATUS=1 AND TYPE = 0";
 	}
 
 
@@ -112,7 +112,7 @@ function categories_list($name = "All Articles") {
 *
 **/
 	$data = array();
-	$query = "SELECT * FROM categories WHERE PARENT_SEC = 0000 AND ACTIVE = 1";
+	$query = "SELECT * FROM categories WHERE PARENT_SEC = 0000 AND ACTIVE = 1 AND TYPE = 0";
 
 	$data =mysql_query($query);
 	echo '<ul class="cat-list">';
