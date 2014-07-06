@@ -118,16 +118,16 @@ function article_exist($option = FALSE){
 		if($func_num_args>1){
 			unset($func_get_args[0]);
 			$fields =' SEC = \''.implode('\' AND SEC = \'',$func_get_args).'\'';
-			$query= "SELECT count(*) FROM data WHERE $fields";
+			$query= "SELECT count(*) FROM data WHERE $fields AND TYPE = 0";
 		}else
 			return FALSE;
 	}else{
 		if($func_num_args>1){
 			unset($func_get_args[0]);
 			$fields =' SEC != \''.implode('\' AND SEC != \'',$func_get_args).'\'';
-			$query= "SELECT count(*) FROM data WHERE $fields";
+			$query= "SELECT count(*) FROM data WHERE $fields AND TYPE = 0";
 		}else
-			$query= "SELECT count(*) FROM data";
+			$query= "SELECT count(*) FROM data WHERE TYPE = 0";
 	}
 
 	$qurrey=mysql_query($query);
@@ -162,16 +162,16 @@ function article_last_published($option = FALSE){
 		if($func_num_args == 1){
 			unset($func_get_args[0]);
 			$fields =' SEC = \''.implode('\' OR SEC = \'',$func_get_args).'\'';
-			$query= "SELECT SL_NO FROM data WHERE $fields AND STATUS=1 ORDER BY DATE DESC LIMIT 1";
+			$query= "SELECT SL_NO FROM data WHERE $fields AND STATUS=1 AND TYPE = 0 ORDER BY DATE DESC LIMIT 1";
 		}else
 			return 0;
 	}else{
 		if($func_num_args>1){
 			unset($func_get_args[0]);
 			$fields =' SEC != \''.implode('\' AND SEC != \'',$func_get_args).'\'';
-			$query= "SELECT SL_NO FROM data WHERE $fields AND STATUS=1 ORDER BY DATE DESC LIMIT 1";
+			$query= "SELECT SL_NO FROM data WHERE $fields AND STATUS=1 AND TYPE = 0 ORDER BY DATE DESC LIMIT 1";
 		}else
-			$query= "SELECT SL_NO FROM data WHERE STATUS=1 ORDER BY DATE DESC LIMIT 1";
+			$query= "SELECT SL_NO FROM data WHERE STATUS=1 AND TYPE = 0 ORDER BY DATE DESC LIMIT 1";
 	}
 
 	$data =mysql_result(mysql_query($query),0);
@@ -211,15 +211,15 @@ function article_published($limit, $start=0, $option = FALSE){
 	if($option == true){
 		if($func_num_args > 3){
 			$fields =' SEC = \''.implode('\' OR SEC = \'',$func_get_args).'\'';
-			$query= "SELECT SL_NO FROM data WHERE $fields AND STATUS=1 ORDER BY DATE DESC LIMIT $start, $limit";
+			$query= "SELECT SL_NO FROM data WHERE $fields AND STATUS=1 AND TYPE = 0 ORDER BY DATE DESC LIMIT $start, $limit";
 		}else
 			return 0;
 	}else{
 		if($func_num_args>3){
 			$fields =' SEC != \''.implode('\' AND SEC != \'',$func_get_args).'\'';
-			$query= "SELECT SL_NO FROM data WHERE $fields AND STATUS=1 ORDER BY DATE DESC LIMIT $start, $limit";
+			$query= "SELECT SL_NO FROM data WHERE $fields AND STATUS=1 AND TYPE = 0 ORDER BY DATE DESC LIMIT $start, $limit";
 		}else
-			$query= "SELECT SL_NO FROM data WHERE STATUS=1 ORDER BY DATE DESC LIMIT $start, $limit";
+			$query= "SELECT SL_NO FROM data WHERE STATUS=1 ORDER AND TYPE = 0 BY DATE DESC LIMIT $start, $limit";
 	}
 
 	$data =mysql_query($query);

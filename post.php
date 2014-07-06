@@ -13,7 +13,7 @@
 		<div class="content">
 			<div class="content-inner">
 <?php
-				if($data->ar_section == "Bits"):
+				if($data->ar_section == "Bits" || $data->ar_type == 1):
 ?>
 				<header id="content-header">
 					<div class="inner-container">
