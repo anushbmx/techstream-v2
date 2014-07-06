@@ -3,7 +3,30 @@
 * Contains the functions printing HTML without any manipulation
 */
 
-function main_search_box() {
+function side_search_box($q = false){
+
+/**
+*  Main search
+*
+* Prints the FUll width search box
+*
+**/
+	if($GLOBALS['search'] == false):
+?>
+	<div class="search">
+		<h4 class="section-heading" ><i class="fa fa-search"></i> Search</h4>
+		<form class="searchbar" action="<?php echo static_url('main')."/search.php" ?>" method="get">
+	        <input type="search" name="q" required="" placeholder="<?php if($q != false) echo $q; else echo "Type to seach"; ?>" >
+	        <input type="submit" class="submit" value="search" >
+	        <p class="powered_by">Powered by <a href="http://www.google.com/cse/">Google Custom Search</a></p>
+	    </form>
+	</div>
+<?php
+		$GLOBALS['search']  = true;
+	endif;
+}
+
+function main_search_box($q) {
 
 /**
 *  Main search
@@ -19,7 +42,7 @@ function main_search_box() {
 					<div class="column-small-11 center">
 						<div class="top-search">
 							<form action="<?php echo static_url('main')."/search.php" ?>">
-								<input type="search" class="search-box" name="q" placeholder="Search for" >
+								<input type="search" class="search-box" name="q" placeholder="<?php if($q != false) echo $q; else echo "Type to seach"; ?>" >
 								<input type="submit" value="search" class="search-button">
 							</form>
 						</div>
