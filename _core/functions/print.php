@@ -68,7 +68,7 @@ function pagination($limit, $start=0, $url = NULL, $option = FALSE) {
 		if($current_page!= 1){
 			echo '<li><a ';
 			if($current_page!=2){
-				echo 'href="'.$url.'?page='.($current_page-1).'"';
+				echo 'href="'.$url.'&page='.($current_page-1).'"';
 			}else{
 				echo 'href="'.$url.'"'; 
 			}
@@ -83,16 +83,16 @@ function pagination($limit, $start=0, $url = NULL, $option = FALSE) {
 					echo '<li class="active"><a>'.$i.'</a></li>';
 				}else{
 					echo '<li><a ';
-					if($i!=1){ echo 'href="'.$url.'?page='.$i.'"'; }else {echo 'href="'.$url.'"'; }
+					if($i!=1){ echo 'href="'.$url.'&page='.$i.'"'; }else {echo 'href="'.$url.'"'; }
 					echo '>'.$i.'</a></li>';
 				}
 			}
 		}
 		if (($current_page+$custom_range) < ($max_page))
-			echo '<li class="space">...</li><li><a href="'.$url.'?page='.$max_page.'">'.$max_page.'</a></li>';
+			echo '<li class="space">...</li><li><a href="'.$url.'&page='.$max_page.'">'.$max_page.'</a></li>';
 		
 		if($current_page!= $max_page)
-			echo '<li> <a href="'.$url.'?page='.($current_page+1).'"><i class="fa fa-chevron-right"></i></a></li>';
+			echo '<li> <a href="'.$url.'&page='.($current_page+1).'"><i class="fa fa-chevron-right"></i></a></li>';
 		echo '</ul></nav>';
 
 	}
