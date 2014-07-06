@@ -15,6 +15,8 @@
 	if (empty($_GET["page"])== true && isset($_GET["page"]) == false ) {
 		$page=0;
 		$start = 0;
+		$title = $category_data->cat_desc;
+		$description = $category_data->cat_desc;
 
 	}else{
 		$page=$_GET["page"];
@@ -23,7 +25,8 @@
 		if($page < 2){
 			$page = 0;
 			$start = 0;
-		}		
+		}	
+
 	}
 
 	include('_includes/header.php');

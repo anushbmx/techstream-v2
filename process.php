@@ -19,6 +19,8 @@
 			include('post.php');
 		}elseif(wrong_category($url)==true){
 			wrong_category_redirect($url);
+		}else{
+			echo "404 Lol";
 		}
 	}else{
 		echo "404 Lol";
