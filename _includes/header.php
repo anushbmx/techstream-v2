@@ -59,7 +59,8 @@
 	<?php
 		else:
 	?>
-		<title>New</title>
+		<title><?php echo $title ?> | Tech Stream</title>
+		<meta name="description" content="<?php echo $description ?>"/>
 	<?php
 		endif;
 	endif;

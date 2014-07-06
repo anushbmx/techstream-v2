@@ -15,7 +15,7 @@
 	if (empty($_GET["page"])== true && isset($_GET["page"]) == false ) {
 		$page=0;
 		$start = 0;
-		$title = $category_data->cat_desc;
+		$title = $category_data->cat_name;
 		$description = $category_data->cat_desc;
 
 	}else{
@@ -26,6 +26,8 @@
 			$page = 0;
 			$start = 0;
 		}	
+		$title = $category_data->cat_name." : - Page -".$page;
+		$description = $category_data->cat_desc." - Page -".$page;
 
 	}
 
@@ -44,7 +46,7 @@
 								</div>
 								<div class="row">
 									<div class="column-small-10 cat-desc">
-										<h1><?php $category_data->category_name(); ?></h1>
+										<h1><?php echo $title; ?></h1>
 										<p><?php $category_data->category_description(); ?></p>
 									</div>
 								</div>
