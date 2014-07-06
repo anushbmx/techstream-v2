@@ -1,0 +1,5 @@
+/* CSS particulat for system */
+
+article>h1, .post-title , .post img{
+	display: none;
+}
