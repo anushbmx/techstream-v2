@@ -47,6 +47,7 @@ class article {
 	var $ar_status;
 	var $ar_author_id;
 	var $ar_approver_id;
+	var $ar_type;
 
 // Constructor Class to initialize the variables of the class
 
@@ -65,9 +66,10 @@ class article {
 		$this->ar_published_date = $data[DATE];
 		$this->ar_content = $data[FULLTEXT];
 		$this->ar_created_date = $data[CREATED_DATE]; 
-		$this->ar_status = $data[ARTICLE_STATUS];
+		$this->ar_status = $data[STATUS];
 		$this->ar_author_id =	$data[AUTHOR_CODE];
 		$this->ar_approver_id = $data[APPROVED_USER];
+		$this->ar_type = $data[TYPE];
 	}
 
 	function article_id(){
@@ -125,6 +127,10 @@ class article {
 
 	function article_status(){
 		echo $this->ar_created_date;
+	}
+
+	function article_type(){
+		echo $this->ar_type;
 	}
 
 }
