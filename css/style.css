@@ -13,7 +13,7 @@ html{
 	overflow-y: scroll;
 }
 body {
-    color: #000;
+    color: rgba(0,0,0,0,0.8);
     font:300 18px Lato,'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 img{
@@ -47,12 +47,12 @@ article ol{
 	padding-left: 4rem;
 }
 article a{
-	border-bottom: 3px solid rgb(229,229,229);
+	border-bottom: 1px solid rgba(4,61,248,0.2);
 	text-decoration: none;
 	display: inline-block;
 }
 article a:hover{
-	border-color: #043df8;
+	border-color: rgba(4,61,248,1);
 	text-decoration: none;
 }
 article img{
@@ -69,19 +69,19 @@ article img+small{
 }
 blockquote{
 	font-style: italic;
-	border-left: 0.75rem solid rgb(229, 229, 229);
+	border-left: 3px solid rgba(0,0,0,0.2);
 	margin-left: 0;
-	padding-left: 2em;
+	padding-left: 20px;
 }
 a{
-	color: #043df8;
+	color: rgba(4,61,248,1);
 	text-decoration: none;
 }
 a:hover{
 	text-decoration: underline;
 }
 a:visited{
-	color: #3B5998;
+	color: rgba(59,89,152,0.8);
 }
 pre{
 	white-space: pre-wrap;
@@ -126,18 +126,23 @@ h1{	font-size: 40px; }
 h2{ font-size: 36px; }
 h3{ font-size: 32px; }
 h4{ font-size: 28px; }
+h5,h6 {
+	font-style: italic;
+	padding:5px;
+	margin: 0;
+}
 /* Custom Heading Styles */
 .section-heading{
 	width: 100%;
 	padding: 5px;
-	border-bottom: 5px solid #EDEDED;
+	border-bottom: 5px solid rgba(0,0,0,0.1);
 	font-size: 1rem;
 	position: relative;
 }
 .section-heading:after{
 	content: "\f175";
 	font-family: 'FontAwesome';
-	color: #CCC;
+	color: rgba(0,0,0,0.2);
 	font-size: 0.7rem !important;
 	position: absolute;
 	right: 10px;
@@ -152,9 +157,9 @@ input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type=
 	padding:7px;
 	
 	font-style: italic;
-	color:#A9A796;
-	background: #F1F1F1;
-	border: 1px solid #DEDEDE;
+	color:rgba(0,0,0,0.6);
+	background: rgba(238,238,238,1);
+	border: 1px solid rgba(0,0,0,0.1);
 	border-radius: 0px;
 	
 	-webkit-appearance: none;
@@ -165,8 +170,8 @@ input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type=
 }
 
 input[type="submit"]{
-	background: none repeat scroll 0% 0% #3E433E;
-	color: #FFF;
+	background: none repeat scroll 0% 0% rgba(0,0,0,0.8);
+	color: rgba(255,255,255,1);
 	border: 0px none;
 	cursor: pointer;
 	text-transform: uppercase;
@@ -174,7 +179,7 @@ input[type="submit"]{
 
 }
 input[type="submit"]:hover{
-	background:#043DF8;
+	background:rgba(4,61,248,1);
 }
 
 button, input, select, textarea {
@@ -187,10 +192,10 @@ button, input, select, textarea {
 
 .button{
 	display: inline-block;
-	background: #EEE;
+	background: rgba(0,0,0,0.8);
 	padding:0 10px;
 	border-bottom: 3px solid rgb(229,229,229);
-	color: #000;
+	color: rgba(0,0,0,1);
 	font-family: Lato, "Open sans";
 	font-size: 1rem;
 	font-weight: bold;
@@ -218,7 +223,7 @@ button, input, select, textarea {
 }
 #main-header{
 	min-height: 50px;
-	border-bottom: 1px solid rgb(229, 229, 229);
+	border-bottom: 1px solid rgba(0,0,0,0.2);
 	width: 100%;
 }
 .logo{
@@ -233,7 +238,7 @@ button, input, select, textarea {
 	width: 100%;
 	overflow: hidden;
 	background:#f9f9f9;
-	border-bottom: 1px solid rgb(229, 229, 229);
+	border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 .article-image{
 	max-width: 580px;
@@ -260,7 +265,7 @@ button, input, select, textarea {
 	background-color: rgba(0,0,0,0.4);
 }
 .overlay-heading{
-	color: #fff;
+	color: rgba(225,225,225,1);
 	font-size: 1.2rem;
 }
 /* bits container */
@@ -279,12 +284,12 @@ button, input, select, textarea {
 	display: block;
 	padding:10px 0; 
 	color: #93A1A1;   
-	border-bottom: 1px solid rgb(229,229,229);
+	border-bottom: 1px solid rgba(0,0,0,0.1);
 	text-decoration: none;
 	font-size: 1em;
 }
 .bit a:hover *{
-	color: rgb(0,0,0) !important;
+	color: rgba(0,0,0,1) !important;
 }
 .section-link{
 	padding-top: 5px;
@@ -292,15 +297,14 @@ button, input, select, textarea {
 }
 .bit-title{
 	font-size: 1.2rem;
-	color: #686C68;
-
+	color: rgba(0,0,0,0.6);
 }
 .more-bits a{
 	text-align: right;
 	border: none;
 }
 .more-bits a:hover{
-	color: #043DF8;	
+	color: rgba(0,0,0,0.8);	
 }
 
 .feed-header{
@@ -324,8 +328,8 @@ button, input, select, textarea {
 	display: none;
 }
 a.tw-rss{
-	background-color: #E18728;
-	color: #fff;
+	background-color: rgba(225,135,40,1);
+	color: rgba(255,255,255,1);
 }
 a.tw-rss:hover .fa{
 	display: none;
@@ -334,15 +338,15 @@ a.tw-rss:hover .hover-eff{
 	display: block;
 	text-decoration: none !important;
 	font-weight: bold;
-	color: #fff;
+	color: rgba(255,255,255,1);
 }
 a.tw-twitter{
-	background-color: #55acee;
-	color: #fff;
+	background-color: rgba(85,172,238,1);
+	color: rgba(255,255,255,1);
 }
 a.tw-twitter:hover{
-	background-color: #292f33;
-	color: #fff;
+	background-color: rgba(41,47,51,1);
+	color: rgba(255,255,255,1);
 }
 .cat-list {
 	padding-top:20px;
@@ -354,31 +358,28 @@ a.tw-twitter:hover{
 	margin-top: 5px;
 }
 .cat-list a{
-	color: #93A1A1;
+	color: rgba(0,0,0,0.6);
 	display: inline-block;
 	font-size: 0.875rem;
 	padding: 5px 10px;
-	border: 1px solid #EDEDED;
+	border: 1px solid rgba(0,0,0,0.1);
 	text-decoration: none;
-	background: #f9f9f9;
+	background: rgba(238,238,238,1);
 }
 .cat-list a:hover {
-    border-color: #93A1A1;
-    color: #7A7A7A;
-    background: #fff;
+    border-color: rgba(0,0,0,0.2);
 }
 .cat-list .active{
 	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) inset;
-    background: #EEE;
+    background: rgba(238,238,238,0.2);
 }
 .cat-desc{
 	padding-bottom: 1rem;
-	text-shadow:0px 1px 0px #FFF;
 }
 .cat-desc p{
 	font-size: 1rem;
 	font-style: italic;
-	color: #AAB6AA ;
+	color: rgba(0, 0, 0, 0.6) ;
 }
 .section-link{
 	font-size: 0.8em;
@@ -397,7 +398,6 @@ a.tw-twitter:hover{
 .ad-h{
 	max-width: 300px;
 	padding: 10px;
-	margin-top: 20px;
 }
 .ad-ver{
 	width: 150px;
@@ -426,16 +426,16 @@ a.tw-twitter:hover{
       font-size:0.6em;
 }
 #content-article{
-	border-bottom: 1px solid rgb(229, 229, 229);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2) ;
 }
 .article-heading{
-	margin-top: 30px;
-	color: #686C68 ;
+	margin-top: 20px;
 	margin-bottom: 0;
+	color: rgba(0,0,0,1);
 	font-size: 2rem;
-	line-height: 1.1em;
-	padding-bottom: 20px;
-	border-bottom: 1px solid #ccc;
+	line-height: 1.2em;
+	padding-bottom: 15px;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 .post-addon{
 	margin: 0.5em 0;
@@ -444,14 +444,14 @@ a.tw-twitter:hover{
 	display: inline-block;
 	margin-right: 2em;
 	font-size: 0.80rem;
-	color: #686C68;
+	color: rgba(0,0,0,0.6);
 }
 .post-addon a{
-	color: #686C68 !important;
+	color: rgba(0,0,0,0.6);
 }
 .article-sharing{
 	width: 100%;
-	margin-bottom: 3em;;
+	margin: 3em 0;
 	font-weight: 100;
 	font-size: 0.85rem;
 	opacity: 0.8;
@@ -462,11 +462,11 @@ a.tw-twitter:hover{
 .article-sharing i{
 	margin-right: 0.2em;
 	font-size: 1.1em;
-	color: #444;
+	color: rgba(0, 0, 0, 0.6) ;
 }
 .article-sharing a{
 	text-decoration: none;
-	color: #444;
+	color: rgba(0, 0, 0, 0.6) ;
 	font-size: 0.85rem
 }
 .article-sharing a:hover{
@@ -501,8 +501,8 @@ a.tw-twitter:hover{
 	padding: 10px 0;
 }
 #search-container{
-	background: #E6E7E8;
-	border-bottom: 1px solid #E5E5E5;
+	background: rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2) ;
 }
 .search-box{
 	width: 89%;
@@ -517,7 +517,7 @@ a.tw-twitter:hover{
 }
 
 .add-on-main, .add-on-bits{
-	border-right: 1px solid #E5E5E5;
+	border-right: 1px solid rgba(0, 0, 0, 0.2);
 	min-height: 200px;
 }
 .add-on-main img{
@@ -529,13 +529,13 @@ a.tw-twitter:hover{
 }
 .post-list li{
 	padding: 15px 0;
-	border-bottom: 1px solid rgb(229, 229, 229);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .post-title-a{
-	color: #000 !important;
+	color: rgba(0, 0, 0, 0.8)  !important;
 }
 .post-title-a:hover{
-	color: #043DF8 !important;
+	color: rgba(4,61,248,1) !important;
 	text-decoration: none;
 }
 .more-post{
@@ -548,8 +548,8 @@ a.tw-twitter:hover{
 	padding:0.4rem;
 }
 .more-post	a:hover{
-	background: #043DF8;
-	color: #fff;
+	background: rgba(4,61,248,1);
+	color: rgba(255,255,255,1);
 }
 .post-list-title{
 	font-size: 1.2em;
@@ -580,29 +580,29 @@ a.tw-twitter:hover{
 .pagination a{
 	display: block;
 	padding: 5px 10px; 
-	background: #F1F1F1;
-	color: #000;
+	background: rgba(238,238,238,1);
+	color: rgba(0,0,0,1);
 }
 .pagination a:hover{
-	background: #043DF8;
+	background: rgba(4,61,248,1);
 	color: #fff;
 	text-decoration: none;
 }
 .pagination .active a{
 	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2) inset;
-	background: #000;
-	color: #fff;
+	background: rgba(0,0,0,1);;
+	color: rgba(255,255,255,1);
 }
 /*Browser Compactablilty */
 
 .compatibility{
-	border-bottom:5px solid #EDEDED;
+	border-bottom:5px solid rgba(0,0,0,0.2);
 }
 
 .compatibility p{
 	font-family: Lato,Georgia,"Times New Roman",Times,serif !important;
 	font-size: 16px;
-	color:#C30;
+	color:rgba(204,51,0,1);
 }
 .icon-holder{
 	text-align: center;
@@ -631,7 +631,7 @@ a.tw-twitter:hover{
 	background: #E6E7E8;
 	font-weight:100;
 	color: #000;
-	border-top: 1px solid #ccc;
+	border-top: 1px solid rgba(0,0,0,0.2);
 	font-size: 0.83rem;
 }
 .footer-links{
@@ -644,7 +644,7 @@ a.tw-twitter:hover{
 }
 .footer-links a{
 	text-decoration: none;
-	color: #000;
+	color: rgba(0,0,0,1);
 	font-weight:bold;
 }
 .footer-links a:hover{
@@ -666,7 +666,7 @@ a.tw-twitter:hover{
 }
 .footer-bottom{
 	margin-top: 30px;
-	border-top: 1px solid #fff;
+	border-top: 1px solid rgba(255,255,255,1);
 	font-size: 0.70rem;
 }
 .footer-bottom a{
@@ -728,8 +728,8 @@ a.tw-twitter:hover{
 @media(max-width:768px){
 	.bit a{
 		padding: 10px;
-		border-right: 1px solid rgb(229,229,229);
-		border-left: 1px solid rgb(229,229,229);
+		border-right: 1px solid rgb(0,0,0,0.2);
+		border-left: 1px solid rgb(0,0,0,0.2);
 	}
 	.section-link{
 		display: block;
@@ -741,7 +741,7 @@ a.tw-twitter:hover{
 		margin-right: 2em;
 	}
 	.add-on-main{
-		border-bottom: 1px solid #E5E5E5;
+		border-bottom: 1px solid rgb(0,0,0,0.2);
 		border: none;
 	}
 	.sidebar div {
