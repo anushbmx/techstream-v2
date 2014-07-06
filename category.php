@@ -30,7 +30,7 @@
 		$description = $category_data->cat_desc." - Page -".$page;
 
 	}
-
+	$keywords = $category_data->cat_keywords;
 	include('_includes/header.php');
 ?>
 		<div class="content">

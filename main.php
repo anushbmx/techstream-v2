@@ -13,6 +13,8 @@
 	*/
 	include('_core/init.php');
 	$template=0;
+	$description="Tech stream is a Web Design and Development blog dedicated to provide inspiring and innovative contents.";
+	$keywords="Tech Stream Projects,Techstream works, Tech Stream ,Tech Stream";
 	include('_includes/header.php');
 ?>
 		<div class="content">

@@ -165,6 +165,7 @@ class category {
 	var $cat_url;
 	var $cat_desc;
 	var $cat_parent;
+	var $cat_keywords;
 	var $cat_active;
 	var $cat_list_size;
 	var $cat_list_template;
@@ -178,6 +179,7 @@ class category {
 		$this->cat_url = $data[URL];
 		$this->cat_desc = $data[DESC];
 		$this->cat_parent =	$data[PARENT_SEC];
+		$this->cat_keywords = $data[KEYWORDS];
 		$this->cat_active =	$data[ACTIVE];
 		$this->cat_list_size =	$data[LIST_SIZE];
 		$this->cat_list_template = $data[LIST_TEMPLATE];
@@ -201,6 +203,10 @@ class category {
 
 	function category_parent(){
 		echo $this->cat_parent;
+	}
+
+	function category_keywords(){
+		echo $this->cat_keywords;
 	}
 
 	function category_active(){

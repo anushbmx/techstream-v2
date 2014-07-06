@@ -44,6 +44,7 @@
 	<meta property="og:image" content="<?php static_url('images'); $data->article_image();?>" />
 	<meta property="og:site_name" content="Tech Stream" />
 	<meta property="og:description" content="<?php $data->article_description();?>"/>
+	<meta property="og:type" content="article">
 
 	<!-- Twitter -->
 	<meta name="twitter:title" content="<?php $data->article_title();?>" />
@@ -59,14 +60,19 @@
 	<?php
 		else:
 	?>
-		<title><?php echo $title ?> | Tech Stream</title>
+		<title><?php if(empty($title)==false){ echo $title; ?> | Tech Stream<?php }else{ ?>Tech Stream<?php } ?></title>
 		<meta name="description" content="<?php echo $description ?>"/>
+
+		<meta property="og:locale" content="en_US">
+		<meta property="og:title" content="<?php if(empty($title)==false){ echo $title; ?> | Tech Stream<?php }else{ ?>Tech Stream<?php } ?>">
+		<meta property="og:description" content="<?php echo $description ?>">
+		<meta property="og:type" content="website">
 	<?php
 		endif;
 	endif;
 	?>
 
-
+	<link rel="publisher" href="https://plus.google.com/109470966265063246951">
 
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/grid.css" media="all">
