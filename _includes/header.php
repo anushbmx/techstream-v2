@@ -92,7 +92,7 @@
 				<div class="inner-container">
 						<div class="row">
 							<div class="column-small-11 center">
-								<a href="#" class="logo ">Tech Stream</a>
+								<a href="<?php static_url('main'); ?>" class="logo ">Tech Stream</a>
 							</div>
 						</div>
 				</div><!-- end of class="inner-container" -->

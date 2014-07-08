@@ -50,12 +50,12 @@
 										<li><a href="http://techstream.org/Privacy">Privacy</a></li>
 										<li><a href="http://techstream.org/Licence">Licence</a></li>
 										<li><a href="http://techstream.org/Credits">Credits</a></li>
-										<li><a href="http://techstream.org/sitemap">Site Map <i class="fa fa-sitemap"></i></a></a></li>
+										<li><a href="http://techstream.org/sitemap"><i class="fa fa-sitemap"></i> Site Map </a></a></li>
 									</ul>
 							    </div>
 							    <div class="column-small-5">
 									<ul class="footer-links footer-right">
-										<li>&copy; {{Year}} Tech Stream</li>
+										<li>&copy; <?php echo date('Y',time()); ?> Tech Stream. All code <a href="http://opensource.org/licenses/MIT">MIT license</a></li>
 									</ul>
 								</div>
 							</div>

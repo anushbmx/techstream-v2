@@ -156,7 +156,7 @@ function static_url($data = 'images', $print = 0 ){
     elseif (strcmp($data, 'img') == 0) 
         $url =  "http://ns2.techstream.org/";
     else
-        $url =  "http://techstream.org/";
+        $url =  "http://next.techstream.org/";
 
     if($print == 0){
         echo $url;

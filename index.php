@@ -65,7 +65,7 @@
 							        			<?php
 							        					}//end of while
 							        			?>
-							        				<li class="more-bits"><a href="#">More ... <i class="fa fa-long-arrow-right"></i></a></li>
+							        				<li class="more-bits"><a href="<?php static_url('main');?>Bits">More ... <i class="fa fa-long-arrow-right"></i></a></li>
 							        			<?php
 							        				else:
 							        			?>
