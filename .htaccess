@@ -1,0 +1,43 @@
+
+###removes .php###
+##################
+RewriteEngine On
+RewriteCond %{THE_REQUEST} ^[A-Z]+\ /([^/]+/)*[^.#?\ ]+\.php([#?][^\ ]*)?\ HTTP/
+RewriteRule ^(([^/]+/)*[^.]+)\.php http://techstream.org/$1 [R=301,L]
+
+### Redirects index to root ###
+###############################
+RewriteEngine On
+RewriteRule ^(.*)index.php$ http://techstream.org/$1 [R=301,L]
+
+
+
+###WWW to no WWW###
+###################
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+#URL Rewrite
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+####URL Rewrite for aticles####
+###############################
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ process.php?url=$1
+
+#Blocks Perl access to server
+SetEnvIfNoCase User-Agent "^libwww-perl*" block_bad_bots
+Deny from env=block_bad_bots
+
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+
+deny from 146.0.74.205

@@ -37,12 +37,13 @@
 						<div class="column-small-11 center">
 						    <div class="add-on row">
 							    <div class="column-small-8 add-on-bits">
-						    		<div id="bits-article">
-										<article class="article" itemtype="http://schema.org/Article">
-											<?php $data->article_content();?>
-										</article>	
-										<?php  social_sharing($article_id); ?>
-									</div>
+									<article class="article bits-article" itemtype="http://schema.org/Article">
+										<?php $data->article_content();?>
+									</article>	
+									<?php  
+											if($data->ar_type == 0)
+												social_sharing($article_id);
+									 ?>
 							    </div>
 							 	<div class="column-small-4 sidebar">
 							    	<?php 
