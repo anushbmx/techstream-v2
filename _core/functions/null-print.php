@@ -65,28 +65,8 @@ function ad_box() {
 **/
 	if($GLOBALS['ad'] == false):
 ?>
-
-			<div class="bsap_1293798 bsap ad ad-h" id="bsap_1293798">
-			<small class="advert">Advertisement </small>
-
-				<div class="bsa_it one">
-					<div class="ad1 odd" id="bsa_4751333">
-			    		<a target="_blank">
-			        		<span class="bsa_it_i">
-			        		<img src="images/sample.jpg" alt="Webydo" height="100" width="130"></span>
-			    		</a>
-
-			    		<a target="_blank" class="text">
-			    			<span class="bsa_it_t">Webydo</span>
-			    			<span class="bsa_it_d">40K Professionals are Disrupting the Web Design Industry. Create Your FREE Site.</span>
-			    		</a>
-			    		<div style="clear:both"></div>
-					</div>
-					<span class="bsa_it_p">
-						<a target="_blank">ads by BSA</a>
-					</span>
-				</div>
-			</div>
+	<script type="text/javascript" src="http://cdn.adpacks.com/adpacks.js?legacyid=1293798&zoneid=1386&key=9db79f8dbe2e599ab3e31808ec3b6880&serve=C6SI42Y&placement=techstreamorg&circle=dev" id="_adpacks_js"></script>
+	
 <?php 
 		$GLOBALS['ad']  = true;
 	endif;

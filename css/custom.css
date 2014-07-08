@@ -3,3 +3,10 @@
 article>h1, .post-title , .post img{
 	display: none;
 }
+
+html body .one .bsa_it_a{
+	border: none !important;
+	padding: 0 !important;
+	background-color: transparent !important;
+	font-family: inherit !important;
+}
