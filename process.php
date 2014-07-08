@@ -16,7 +16,7 @@
 		}elseif (category_valid($url) == true) {
 			include('category.php');
 		}elseif(wrong_url($url) == true){
-			include('post.php');
+			wrong_url_redirect($url);
 		}elseif(wrong_category($url)==true){
 			wrong_category_redirect($url);
 		}else{
