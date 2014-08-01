@@ -14,7 +14,7 @@ html{
 }
 body {
     color: rgba(0,0,0,0,0.8);
-    font:300 18px Lato,'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font: 300 16px Lato,'Open Sans',sans-serif;
 }
 img{
 	max-width: 100%;
@@ -35,7 +35,7 @@ strong{
 }
 article p, article li{
     line-height: 1.75em;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     font-family: Georgia,"Times New Roman",Times,serif;
 }
 .bits-article p, .bits-article li{
@@ -123,7 +123,7 @@ code{
 }
 h1,h2,h3,h4,h5,h6{
 	text-transform: capitalize;
-	font-family: Aleo, Lato, Georgia,"Times New Roman",Times,serif;
+	font-family: Aleo, Lato, "Times New Roman",Times,serif;
 	letter-spacing: 1px;
 	font-weight: bold;
 }
@@ -144,6 +144,7 @@ h5,h6 {
 	border-bottom: 5px solid rgba(0,0,0,0.1);
 	font-size: 1rem;
 	position: relative;
+	margin-bottom: 0.5rem;
 }
 .section-heading:after{
 	content: "\f175";
@@ -229,7 +230,6 @@ button, input, select, textarea {
 }
 #main-header{
 	min-height: 50px;
-	border-bottom: 1px solid rgba(0,0,0,0.2);
 	width: 100%;
 }
 .logo{
@@ -244,7 +244,6 @@ button, input, select, textarea {
 	width: 100%;
 	overflow: hidden;
 	background:#f9f9f9;
-	border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 .article-image{
 	max-width: 580px;
@@ -497,6 +496,9 @@ a.tw-twitter:hover{
 	display: inline-block;
 }
 /*Side bar*/
+.newsletter{
+	margin-top: 0.5rem;
+}
 .powered_by{
 	font-size: 0.8rem;
 	text-align: right;
@@ -508,7 +510,6 @@ a.tw-twitter:hover{
 }
 #search-container{
 	background: rgba(0, 0, 0, 0.1);
-	border-bottom: 1px solid rgba(0, 0, 0, 0.2) ;
 }
 .search-box{
 	width: 89%;
@@ -525,7 +526,9 @@ a.tw-twitter:hover{
 .add-on-main, .add-on-bits{
 	border-right: 1px solid rgba(0, 0, 0, 0.2);
 	min-height: 200px;
+	padding-right: 5px !important;
 }
+
 .add-on-main img{
 	max-width: 150px;
 	width: 100%;
@@ -637,7 +640,6 @@ a.tw-twitter:hover{
 	background: #E6E7E8;
 	font-weight:100;
 	color: #000;
-	border-top: 1px solid rgba(0,0,0,0.2);
 	font-size: 0.83rem;
 }
 .footer-links{
