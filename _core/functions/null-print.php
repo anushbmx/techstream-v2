@@ -26,6 +26,21 @@ function side_search_box($q = false){
 	endif;
 }
 
+function comment_box(){
+
+/**
+*  Comment box
+*
+* Prints the JS for comments from Disquss
+*
+**/
+?>
+	<div id="comments">
+		<h4 class="section-heading"><i class="fa fa-comment"></i> Comments</h4>
+	</div><!-- end of id="comments" -->
+<?php
+}
+
 function main_search_box($q) {
 
 /**

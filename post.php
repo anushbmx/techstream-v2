@@ -120,10 +120,7 @@
 							<div class="add-on row">
 							    <div class="column-small-8 add-on-main">
 							    	<?php article_author($article_id); ?>
-							    	
-							    	<div id="comments">
-							    		<h4 class="section-heading"><i class="fa fa-comment"></i> Comments</h4>
-							    	</div><!-- end of id="comments" -->
+							    	<?php comment_box() ?>							    	
 							    </div>
 							    <div class="column-small-4 sidebar">
 							    	<?php 
