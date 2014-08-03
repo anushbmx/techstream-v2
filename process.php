@@ -20,9 +20,11 @@
 		}elseif(wrong_category($url)==true){
 			wrong_category_redirect($url);
 		}else{
-			echo "404 Lol";
+			$url = "404";
+			require('post.php');
 		}
 	}else{
-		echo "404 Lol";
+		$url = "404";
+		require('post.php');
 	}
 ?>

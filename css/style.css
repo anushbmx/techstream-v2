@@ -54,6 +54,13 @@ article a:hover{
 	border-color: rgba(4,61,248,1);
 	text-decoration: none;
 }
+article a img{
+	border-bottom: 5px solid transparent;
+}
+
+article a:hover img{
+	border-bottom: 5px solid rgba(4,61,248,1);
+}
 article img{
 	margin:5px auto;
 	position: relative;
@@ -177,10 +184,10 @@ input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type=
 }
 
 input[type="submit"], .download_a{
-	background: rgba(0,0,0,0.1);
-	color: rgba(0,0,0,1);
+	background: rgba(4,61,248,0.8);
+	color: rgba(255,255,255,1);
 	border: 0px none;
-	border-bottom: 4px solid rgba(4,61,248,1);
+	border-bottom: 4px solid rgba(0,0,0,0.4);
 	cursor: pointer;
 	text-transform: uppercase;
 	border-radius: 0px;
@@ -190,7 +197,6 @@ input[type="submit"], .download_a{
 }
 input[type="submit"]:hover, .download_a:hover{
 	background:rgba(4,61,248,1);
-	color: rgba(255,255,255,1)
 }
 
 button, input, select, textarea {
@@ -456,6 +462,9 @@ a.tw-twitter:hover{
 }
 .article-sharing li:after{
 	content: '|';
+}
+.article-sharing.horizontal{
+	margin: 1em 0 !important;
 }
 .article-sharing li:first-child:after, .article-sharing li:last-child:after, .article-sharing.horizontal li:after{
 	display: none;
