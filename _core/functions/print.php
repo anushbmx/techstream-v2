@@ -128,7 +128,7 @@ function categories_list($name = "All Articles") {
 	echo '</ul>';	
 }
 
-function social_sharing($article_id) {
+function social_sharing($article_id,$class = FALSE) {
 
 /**
 * Social Sharing Links
@@ -139,18 +139,23 @@ function social_sharing($article_id) {
 * --------------------------------------
 *
 * $article_id 		 -> Article ID
+* $class 			 -> Class name for the UL
 *
 **/
 	$article_id = sanatize($article_id);
 	$data = article_data($article_id);
 
-	echo '<ul class="article-sharing">';
+	echo '<ul class="article-sharing ';
+	if($class != FALSE) 
+		echo $class;
+	echo'">';
 	echo '	<li>Share it on :</li>';
-	echo '	<li><i class="fa fa-facebook-square"></i><a href="http://www.facebook.com/sharer.php?u='.static_url('main',1).$data->ar_url.'&t='.str_replace(" ", "+", $data->ar_title).'" target="_blank" >facebook</a> | </li>';
-	echo '	<li><i class="fa fa-twitter"><a href="http://twitter.com/intent/tweet?url='.static_url('main',1).$data->ar_url.'&text='.str_replace(" ", "+", $data->ar_title).'&via=techstream_org" target="_blank"></i>Twitter</a> | </li>';
+	echo '	<li><i class="fa fa-facebook-square"></i><a href="http://www.facebook.com/sharer.php?u='.static_url('main',1).$data->ar_url.'&t='.str_replace(" ", "+", $data->ar_title).'" target="_blank" >facebook</a> </li>';
+	echo '	<li><i class="fa fa-twitter"><a href="http://twitter.com/intent/tweet?url='.static_url('main',1).$data->ar_url.'&text='.str_replace(" ", "+", $data->ar_title).'&via=techstream_org" target="_blank"></i>Twitter</a> </li>';
 	echo '	<li><i class="fa fa-google-plus-square"><a href="https://plus.google.com/share?url='.static_url('main',1).$data->ar_url.'" target="_blank" ></i>Google+</a></li>';
 	//echo '	<li><i class="fa fa-linkedin"><a href="#"></i>Linked in</a></li>';
-	echo '	<li class="top"><i class="fa fa-long-arrow-up"><a href="#top"></i> Back to Top</a></li>';
+	if($class == FALSE)
+		echo '	<li class="top"><i class="fa fa-long-arrow-up"><a href="#top"></i> Back to Top</a></li>';
 	echo '</ul>';
 }
 

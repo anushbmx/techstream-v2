@@ -85,9 +85,6 @@
 								        		<li><i class="fa fa-calendar"></i> <?php $data->article_published_data();?> </li>
 								        		<li><i class="fa fa-comment"></i> <a href="<?php static_url('main'); $data->article_url();?>#disqus_thread">Comments</a></li>
 							        		</ul>
-									    	<div class="center-small">
-								        		<?php ad_box() ?>
-								        	</div>
 								        </div><!-- end of class="article-info-container" -->							        	
 							        </div><!-- end of column 2 -->
 							    </div>
@@ -99,10 +96,20 @@
 					<div class="inner-container">
 						<div class="row">
 							<div class="column-small-11 center">
-								<article class="article" itemtype="http://schema.org/Article">
-									<?php $data->article_content();?>
-							    </article>  <!-- end of class="article" -->
-							    <?php  social_sharing($article_id); ?>
+								<div class="row">
+									<div class="column-med-2">
+										<?php ad_box() ?>
+									</div>
+									<div class="column-med-8">
+										<article class="article" itemtype="http://schema.org/Article">
+											<?php $data->article_content();?>
+									    </article>  <!-- end of class="article" -->
+									    <?php  social_sharing($article_id); ?>
+									</div>
+									<div class="column-med-2 hide-med">
+										<?php  social_sharing($article_id,'horizontal'); ?>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div><!-- end of class="article-container" -->
