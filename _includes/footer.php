@@ -30,9 +30,7 @@
 									<ul class="footer-links">
 										<li><a href="http://techstream.org/About_us">About</a></li>
 										<li><a href="http://techstream.org/all-articles">All Articles</a></li>
-										<li><a href="http://techstream.org/Contact">Contact Us</a></li>
 										<li><a href="http://techstream.org/licensing">News Letter</a></li>
-										<li><a href="http://techstream.org/sitemap">Site map</a></li>
 									</ul>
 								</div>
 							    <div class="column-small-5">
