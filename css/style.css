@@ -50,6 +50,10 @@ article a{
 	border-bottom: 1px solid rgba(4,61,248,0.2);
 	text-decoration: none;
 }
+h1 a, h2 a, h3 a, h4 a, h5 a {
+	color: rgba(0,0,0,1) !important;
+	border-bottom: 2px solid rgba(0,0,0,0.2);
+}
 article a:hover{
 	border-color: rgba(4,61,248,1);
 	text-decoration: none;

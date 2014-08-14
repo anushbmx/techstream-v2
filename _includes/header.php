@@ -77,7 +77,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/grid.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css" media="all">
-	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+<!--	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900"> -->
 	<link rel="stylesheet" type="text/css" href="css/fonts.css" media="all">
 	<!-- Remove when deploying -->
 	<link rel="stylesheet" type="text/css" href="css/custom.css" media="all">
