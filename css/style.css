@@ -151,7 +151,6 @@ h5,h6 {
 	border-bottom: 5px solid rgba(0,0,0,0.1);
 	font-size: 1rem;
 	position: relative;
-	margin-bottom: 0.5rem;
 }
 .section-heading:after{
 	content: "\f175";
@@ -235,6 +234,7 @@ button, input, select, textarea {
 #main-header{
 	min-height: 50px;
 	width: 100%;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 .logo{
 	text-indent: -999px;
@@ -726,8 +726,8 @@ a.tw-twitter:hover{
 @media(max-width:768px){
 	.bit a{
 		padding: 10px;
-		border-right: 1px solid rgb(0,0,0,0.2);
-		border-left: 1px solid rgb(0,0,0,0.2);
+		border-right:1px solid rgba(0, 0, 0, 0.1);
+		border-left: 1px solid rgba(0,0,0,0.1);
 	}
 	.section-link{
 		display: block;
