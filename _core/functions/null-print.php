@@ -15,9 +15,11 @@ function side_search_box($q = false){
 ?>
 	<div class="search">
 		<h4 class="section-heading" ><i class="fa fa-search"></i> Search</h4>
-		<form class="searchbar" action="<?php echo static_url('main')."/search.php" ?>" method="get">
-	        <input type="search" name="q" required="" placeholder="<?php if($q != false) echo $q; else echo "Type to seach"; ?>" >
-	        <input type="submit" class="submit" value="search" >
+		<form class="searchbar" action="<?php echo static_url('main')."/search.php" ?>" method="get" class="search">
+		<div class="row">
+	        <div class="column-xsmall-10  padd0"><input type="search" name="q" required="" placeholder="<?php if($q != false) echo $q; else echo "Type to seach"; ?>" ></div>
+	        <div class="column-xsmall-2 padd0-xsmall"><input type="submit" class="submit" value="search" class="search-button" ></div>
+	    </div>
 	        <p class="powered_by">Powered by <a href="http://www.google.com/cse/">Google Custom Search</a></p>
 	    </form>
 	</div>
@@ -56,9 +58,11 @@ function main_search_box($q) {
 				<div class="row">
 					<div class="column-small-11 center">
 						<div class="top-search">
-							<form action="<?php echo static_url('main')."/search.php" ?>">
-								<input type="search" class="search-box" name="q" placeholder="<?php if($q != false) echo $q; else echo "Type to seach"; ?>" >
-								<input type="submit" value="search" class="search-button">
+							<form action="<?php echo static_url('main')."/search.php" ?>" class="search">
+							<div class="row">
+								<div class="column-xsmall-10 padd0"><input type="search" class="search-box" name="q" placeholder="<?php if($q != false) echo $q; else echo "Type to seach"; ?>" ></div>
+								<div class="column-xsmall-2 padd0-xsmall"><input type="submit" value="search" class="search-button"></div>
+							</div>
 							</form>
 						</div>
 					</div>
@@ -84,5 +88,33 @@ function ad_box() {
 <?php 
 		$GLOBALS['ad']  = true;
 	endif;
+}
+
+
+function newsletter_box(){
+
+/**
+*  News letter BOX
+*
+* Prints News letter signup box
+*
+**/
+?>
+
+<div class="newsletter">
+	<h4 class="section-heading"><i class="fa fa-envelope"></i> News letter</h4>
+	<p>Subscribe to our email newsletter for useful tips and valuable resources, sent out every new article release.</p>
+    <form class="newsletter" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=techstream/feeds', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+    <div class="row">
+		<div class="column-xsmall-10 padd0"><input placeholder="Your e-mail address" name="email" type="text"></div>
+        <input value="techstream/feeds" name="uri" type="hidden">
+        <input name="loc" value="en_US" type="hidden">
+        <div class="column-xsmall-2 padd0-xsmall"><input class="submit" value="Subscribe" type="submit"></div>
+        <p class="powered_by">Powered by <a href="http://feedburner.google.com/" target="_blank">FeedBurner</a></p>
+    </form> 
+</div>
+<!-- End of News Letter -->
+
+<?php
 }
 ?>

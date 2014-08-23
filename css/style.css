@@ -188,16 +188,17 @@ h6 {
 
 /*Download Links & Buttons & inputs */
 input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="file"]), textarea {
-	outline: 0;
-	margin:0;
-	padding:7px;
-	
-	font-style: italic;
-	color:rgba(0,0,0,0.6);
 	background: rgba(238,238,238,1);
 	border: 1px solid rgba(0,0,0,0.1);
 	border-radius: 0px;
-	
+	color:rgba(0,0,0,0.6);
+	font-style: italic;
+	width: 100%;
+
+	outline: 0;
+	margin:0;
+	padding:7px;
+
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -526,7 +527,7 @@ a.tw-twitter:hover{
 	background: rgba(0, 0, 0, 0.1);
 }
 .search-box{
-	width: 89%;
+	width: 100%;
 	border: medium none;
 	outline-width: 0px;
 	padding-left: 15px;
@@ -534,7 +535,8 @@ a.tw-twitter:hover{
 	background-color: #fff !important;
 }
 .search-button{
-	width: 10%;
+	width: 100%;
+	min-width: 80px;
 }
 
 .add-on-main, .add-on-bits{
@@ -761,8 +763,7 @@ a.tw-twitter:hover{
 		vertical-align: top;
 		margin-right: 2em;
 	}
-	.add-on-main{
-		border-bottom: 1px solid rgb(0,0,0,0.2);
+	.add-on-main, .add-on-bits{
 		border: none;
 	}
 	.sidebar div {

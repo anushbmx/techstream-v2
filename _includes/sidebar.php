@@ -18,22 +18,14 @@
 			|		2 		| Template with ads 				|
 			-----------------------------------------------------
 */
-
+?>
+<h4 class="section-heading hide-large view-small"><i class="fa fa-envelope"></i> Sidebar</h4>
+<?php
 /*
   #####  Ad BOX ###
 */
 	ad_box();
 	side_search_box();
+	newsletter_box();
 ?>
-	<div class="newsletter">
-		<h4 class="section-heading"><i class="fa fa-envelope"></i> News letter</h4>
-		<p>Subscribe to our email newsletter for useful tips and valuable resources, sent out every new article release.</p>
-	    <form class="newsletter" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=techstream/feeds', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
-	        <input placeholder="Your e-mail address" name="email" type="text">
-	        <input value="techstream/feeds" name="uri" type="hidden">
-	        <input name="loc" value="en_US" type="hidden">
-	        <input class="submit" value="Subscribe" type="submit">
-	        <p class="powered_by">Powered by <a href="http://feedburner.google.com/" target="_blank">FeedBurner</a></p>
-	    </form> 
-	</div>
-	<!-- End of News Letter -->
+	
