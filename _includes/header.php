@@ -28,8 +28,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 	<meta http-equiv="content-type" content="text/html;" />
 	<meta name="robots" content="index,follow" />
-	<meta name="viewport" content="initial-scale=1.0 maximum-scale=1.0 user-scalable=no" />
-
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" user-scalable="no">
 
 	<?php 
 		if(isset($template)):
@@ -77,7 +76,6 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/grid.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css" media="all">
-<!--	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900"> -->
 	<link rel="stylesheet" type="text/css" href="css/fonts.css" media="all">
 	<!-- Remove when deploying -->
 	<link rel="stylesheet" type="text/css" href="css/custom.css" media="all">
@@ -92,7 +90,7 @@
 				<div class="inner-container">
 						<div class="row">
 							<div class="column-small-11 center">
-								<a href="<?php static_url('main'); ?>" class="logo ">Tech Stream</a>
+								<a href="/techstream/process.php?url=Web-Development/Monitoring-your-Systems" class="logo ">Tech Stream</a>
 							</div>
 						</div>
 				</div><!-- end of class="inner-container" -->

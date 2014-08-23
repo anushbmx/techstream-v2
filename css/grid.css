@@ -103,6 +103,10 @@
  * No offset pull or push here coz the screen is too small to have it
  * and column-xsmal-12 is not floated since its not needed
  */
+@media(min-width:540px){
+    .container{
+      max-width: 550px;
+    }
 .column-xsmall-1,
 .column-xsmall-2,
 .column-xsmall-3,
@@ -114,7 +118,7 @@
 .column-xsmall-9,
 .column-xsmall-10,
 .column-xsmall-11{
-	float: left;
+  float: left;
 }
 .column-xsmall-1 { width: 8.333333333%; }
 .column-xsmall-2 { width: 16.666666667%; }
@@ -128,6 +132,45 @@
 .column-xsmall-10 { width: 83.333333333%; }
 .column-xsmall-11 { width: 91.666666667%; }
 .column-xsmall-12 { width: 100%; }
+
+/*Push Pull columns*/
+
+.column-xsmall-push-1 { left: 8.333333333%; }
+.column-xsmall-push-2 { left: 16.666666667%; }
+.column-xsmall-push-3 { left: 25%; }
+.column-xsmall-push-4 { left: 33.333333333%; }
+.column-xsmall-push-5 { left: 41.666666667%; }
+.column-xsmall-push-6 { left: 50%; }
+.column-xsmall-push-7 { left: 58.333333333%; }
+.column-xsmall-push-8 { left: 66.666666667%; }
+.column-xsmall-push-9 { left: 75%; }
+.column-xsmall-push-10 { left: 83.333333333%; }
+.column-xsmall-push-11 { left: 91.666666667%; }
+
+.column-xsmall-pull-1 { right: 8.333333333%; }
+.column-xsmall-pull-2 { right: 16.666666667%; }
+.column-xsmall-pull-3 { right: 25%; }
+.column-xsmall-pull-4 { right: 33.333333333%; }
+.column-xsmall-pull-5 { right: 41.666666667%; }
+.column-xsmall-pull-6 { right: 50%; }
+.column-xsmall-pull-7 { right: 58.333333333%; }
+.column-xsmall-pull-8 { right: 66.666666667%; }
+.column-xsmall-pull-9 { right: 75%; }
+.column-xsmall-pull-10 { right: 83.333333333%; }
+.column-xsmall-pull-11 { right: 91.666666667%; }
+
+.column-xsmall-offset-1 { margin-left: 8.333333333%; }
+.column-xsmall-offset-2 { margin-left: 16.666666667%; }
+.column-xsmall-offset-3 { margin-left: 25%; }
+.column-xsmall-offset-4 { margin-left: 33.333333333%; }
+.column-xsmall-offset-5 { margin-left: 41.666666667%; }
+.column-xsmall-offset-6 { margin-left: 50%; }
+.column-xsmall-offset-7 { margin-left: 58.333333333%; }
+.column-xsmall-offset-8 { margin-left: 66.666666667%; }
+.column-xsmall-offset-9 { margin-left: 75%; }
+.column-xsmall-offset-10 { margin-left: 83.333333333%; }
+.column-xsmall-offset-11 { margin-left: 91.666666667%; }
+}
 /*
  * End of xsmall grid 
  */
@@ -387,6 +430,20 @@
     margin:0 auto !important;
   }
   .padd0-small{
+    padding: 0 !important;
+  }
+}
+@media (max-width: 540px){
+  .view-xsmall{
+    display: block;
+  }
+  .hide-xsmall{
+    display: none;
+  }
+  .center-xsmall{
+    margin:0 auto !important;
+  }
+  .padd0-xsmall{
     padding: 0 !important;
   }
 }
