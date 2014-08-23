@@ -13,7 +13,7 @@ html{
 	overflow-y: scroll;
 }
 body {
-    font: 300 16px "Open Sans",Georgia,"Times New Roman",Times,serif;
+    font: 300 16px "Open Sans","Times New Roman",Times,serif;
     color: rgba(0,0,0,0.8);
 }
 img{
@@ -135,7 +135,7 @@ code{
 }
 h1, h2, h3, h4, h5, h6{
 	text-transform: capitalize;
-	font-family: Aleo, VERDANA, "Times New Roman",Times,serif;
+	font-family: Aleo, VERDANA, "Times New Roman";
 	letter-spacing: 1px;
 	font-weight: bold;
 }
@@ -537,7 +537,6 @@ a.tw-twitter:hover{
 }
 .search-button{
 	width: 100%;
-	min-width: 80px;
 }
 
 .add-on-main, .add-on-bits{
