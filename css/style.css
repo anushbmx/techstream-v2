@@ -13,7 +13,7 @@ html{
 	overflow-y: scroll;
 }
 body {
-    font: 300 16px "Open Sans","Times New Roman",Times,serif;
+    font: 16px arial,"Times New Roman",Times,serif;
     color: rgba(0,0,0,0.8);
 }
 img{
@@ -48,7 +48,7 @@ article ol{
 	padding-left: 4rem;
 }
 article a{
-	border-bottom: 1px solid rgba(4,61,248,0.2);
+	border-bottom: 1px solid rgba(41, 128, 185,0.2);
 	text-decoration: none;
 }
 article h1 a, article h2 a, article h3 a{
@@ -56,7 +56,7 @@ article h1 a, article h2 a, article h3 a{
 	border-bottom: 2px solid rgba(0,0,0,0.2);
 }
 article a:hover{
-	border-color: rgba(4,61,248,1);
+	border-color: rgba(41, 128, 185,1);
 	text-decoration: none;
 }
 article a img{
@@ -64,7 +64,7 @@ article a img{
 }
 
 article a:hover img{
-	border-bottom: 5px solid rgba(4,61,248,1);
+	border-bottom: 5px solid rgba(41, 128, 185,1);
 }
 article img{
 	margin:5px auto;
@@ -72,10 +72,10 @@ article img{
 }
 article img+small{
 	width: 80%;
-	margin: 5px auto;
+	margin: 1rem auto 0; 
 	font-style: italic;
 	display: block;
-	color: #c1c1c1;
+	color: rgba(0,0,0,0.4);
 	font-family: Georgia,"Times New Roman",Times,serif;
 }
 blockquote{
@@ -92,14 +92,14 @@ article h1, article h2, article h3, article h4{
 	margin-bottom: 0px;
 }
 a{
-	color: rgba(4,61,248,1);
+	color: rgba(41, 128, 185,1);
 	text-decoration: none;
 }
 a:hover{
 	text-decoration: underline;
 }
 a:visited{
-	color: rgba(59,89,152,0.8);
+	color: rgba(52, 73, 94,0.8);
 }
 pre{
 	white-space: pre-wrap;
@@ -159,8 +159,6 @@ h4 {
     font-size: 18px;
 }
  
-/* Won't be used here */
- 
 h5 {
     font-size: 14px;
 }
@@ -168,6 +166,7 @@ h5 {
 h6 {
     font-size: 12px;
 }
+
 /* Custom Heading Styles */
 .section-heading{
 	width: 100%;
@@ -208,8 +207,8 @@ input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type=
 }
 
 input[type="submit"], .download_a{
-	background: rgba(4,61,248,0.8);
-	color: rgba(255,255,255,1);
+	background: rgba(41, 128, 185,0.8);
+	color: rgba(255,255,255,1) !important;
 	border: 0px none;
 	border-bottom: 4px solid rgba(0,0,0,0.4);
 	cursor: pointer;
@@ -218,9 +217,11 @@ input[type="submit"], .download_a{
 	position: relative;
 	top: -2px;
 	text-align: center;
+	font-weight: bold;
 }
 input[type="submit"]:hover, .download_a:hover{
-	background:rgba(4,61,248,1);
+	background:rgba(41, 128, 185,1);
+	border-bottom: 4px solid rgba(0,0,0,0.4);
 }
 
 button, input, select, textarea {
@@ -228,14 +229,14 @@ button, input, select, textarea {
 	height: 35px;
 	overflow: visible;
 	margin: 0;
-	font-family: sans-serif;
+	font-family: sans-serif !important;
 }
 .download_a{
 	padding: 8px;
 	min-width: 150px;
 	font-size: 0.9rem;
 	display: inline-block;
-	font-weight: 400;
+	margin-top: 1rem;
 }
 .button .fa{
 	font-size: 80% !important;
@@ -272,7 +273,7 @@ button, input, select, textarea {
 #content-header{
 	width: 100%;
 	overflow: hidden;
-	background:#f8f8f8;
+	background:#f7f7f7;
 }
 .article-image{
 	max-width: 580px;
@@ -282,7 +283,7 @@ button, input, select, textarea {
 	position: relative;
 }
 .article-image a:hover .overlay-box{
-	background-color: rgba(4,61,248,0.4);;
+	background-color: rgba(41, 128, 185,1);
 }
 #wide .article-image{
 	margin-left: 0;
@@ -299,7 +300,7 @@ button, input, select, textarea {
 	background-color: rgba(0,0,0,0.4);
 }
 .overlay-heading{
-	color: rgba(225,225,225,1);
+	color: rgba(255,255,255,0.8);
 	font-size: 1.2rem;
 }
 /* bits container */
@@ -559,7 +560,7 @@ a.tw-twitter:hover{
 	color: rgba(0, 0, 0, 0.8)  !important;
 }
 .post-title-a:hover{
-	color: rgba(4,61,248,1) !important;
+	color: rgba(41, 128, 185,1) !important;
 	text-decoration: none;
 }
 .more-post{
@@ -572,7 +573,7 @@ a.tw-twitter:hover{
 	padding:0.4rem;
 }
 .more-post	a:hover{
-	background: rgba(4,61,248,1);
+	background: rgba(41, 128, 185,1);
 	color: rgba(255,255,255,1);
 }
 .post-list-title{
@@ -586,7 +587,7 @@ a.tw-twitter:hover{
 	display: block;
 }
 .post-image-small a:hover{
-	border-bottom: 10px solid rgba(4, 61, 248, 0.7);
+	border-bottom: 10px solid rgba(41, 128, 185,0.7);
 }
 /*navigation */
 .pagination {
@@ -608,7 +609,7 @@ a.tw-twitter:hover{
 	color: rgba(0,0,0,1);
 }
 .pagination a:hover{
-	background: rgba(4,61,248,1);
+	background: rgba(41, 128, 185,1);
 	color: #fff;
 	text-decoration: none;
 }
@@ -620,13 +621,14 @@ a.tw-twitter:hover{
 /*Browser Compactablilty */
 
 .compatibility{
-	border-bottom:5px solid rgba(0,0,0,0.2);
+	border-bottom:1px solid rgba(249,105,14,1);
+	border-top:1px solid rgba(249,105,14,1);
+	margin-top: 1rem;
 }
 
 .compatibility p{
-	font-family: Georgia,"Times New Roman",Times,serif !important;
 	font-size: 16px;
-	color:rgba(204,51,0,1);
+	color:rgba(249,105,14,1);
 }
 .icon-holder{
 	text-align: center;

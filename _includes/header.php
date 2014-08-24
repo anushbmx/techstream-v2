@@ -90,7 +90,7 @@
 				<div class="inner-container">
 						<div class="row">
 							<div class="column-small-11 center">
-								<a href="/techstream/process.php?url=Web-Development/Monitoring-your-Systems" class="logo ">Tech Stream</a>
+								<a href="/techstream/process.php?url=Web-Design/London-Olympics-2012-Logo-with-CSS3#top" class="logo ">Tech Stream</a>
 							</div>
 						</div>
 				</div><!-- end of class="inner-container" -->
