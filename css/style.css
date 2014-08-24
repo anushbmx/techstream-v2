@@ -13,7 +13,7 @@ html{
 	overflow-y: scroll;
 }
 body {
-    font: 16px arial,"Times New Roman",Times,serif;
+    font: 16px Georgia, arial,"Times New Roman",Times,serif;
     color: rgba(0,0,0,0.8);
     -moz-osx-font-smoothing:grayscale;
     text-rendering: optimizelegibility;
@@ -176,6 +176,7 @@ h6 {
 	border-bottom: 5px solid rgba(0,0,0,0.1);
 	font-size: 1rem;
 	position: relative;
+	margin-bottom: 0;
 }
 .section-heading:after{
 	content: "\f175";
@@ -546,17 +547,28 @@ a.tw-twitter:hover{
 	border-right: 1px solid rgba(0, 0, 0, 0.2);
 	min-height: 400px !important;
 }
-
-.add-on-main img{
-	max-width: 150px;
-	width: 100%;
-}
 .article-add-info{
-	font-size: 0.8em;
+	font-size: 0.75em;
 }
 .post-list li{
 	padding: 15px 0;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.post-list li:last-child{
+	border:none;
+}
+.post-list-2{
+	border-top: 1px solid rgba(0,0,0,0.1);
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	padding: 15px 0;
+}
+.post-list-2 li{
+	display: inline-block;
+	width: 23.75%;
+	padding-right: 3%;
+}
+.post-list-2 .post-list-title{
+	padding-bottom: 10px;
 }
 .post-title-a{
 	color: rgba(0, 0, 0, 0.8)  !important;
@@ -580,9 +592,6 @@ a.tw-twitter:hover{
 }
 .post-list-title{
 	font-size: 1.2em;
-}
-.post-image-small{
-	max-width: 150px;
 }
 .post-image-small a{
 	border-bottom: 10px solid transparent;

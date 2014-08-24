@@ -220,10 +220,10 @@ function post_list($article_id) {
 		$data = article_data($article_id);
 
 		echo '<div class="row">';
-		echo '	<h3 class="post-list-title hide-large view-xsmall"><a href="'.static_url('main',1).$data->ar_url.'" class="post-title-a">'.$data->ar_title.'</a></h3>';
-		echo '	<div class="column-xsmall-3 padd0 post-image-small"><a href="'.static_url('main',1).$data->ar_url.'" class="post-title-a"><img src="'.static_url('img',1).$data->ar_image_small.'"></a></div>';
-		echo '	<div class="column-xsmall-9 padd0-xsmall">';
-		echo '		<h3 class="post-list-title hide-xsmall"><a href="'.static_url('main',1).$data->ar_url.'" class="post-title-a">'.$data->ar_title.'</a></h3>';
+		//echo '	<h3 class="post-list-title hide-large view-xsmall"><a href="'.static_url('main',1).$data->ar_url.'" class="post-title-a">'.$data->ar_title.'</a></h3>';
+		echo '	<div class="column-xsmall-4 padd0 post-image-small"><a href="'.static_url('main',1).$data->ar_url.'" class="post-title-a"><img src="'.static_url('images',1).$data->ar_image.'"></a></div>';
+		echo '	<div class="column-xsmall-8 padd0-xsmall">';
+		echo '		<h3 class="post-list-title"><a href="'.static_url('main',1).$data->ar_url.'" class="post-title-a">'.$data->ar_title.'</a></h3>';
 		echo '		<p>'.elliStr($data->ar_description,200).' .. <a href="'.static_url('main',1).$data->ar_url.'">Read More</a></p>';
 		echo '		<p class="article-add-info">Posted in <a href="'.static_url('main',1).$data->ar_section_url.'">'.$data->ar_section.'</a>  | <i class="fa fa-calendar"></i> '.date('F jS Y',strtotime($data->ar_created_date)).' | <i class="fa fa-comment"></i> <a href="'.static_url('main',1).$data->ar_url.'#disqus_thread">Comments</a></p>';
 		echo '	</div>';

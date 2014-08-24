@@ -108,16 +108,14 @@
 							    		 	<ul class="post-list">
 							    		 	<?php
 												if(article_exist()): 
-								            		$article_list = article_published(5,1,False,'Bits');
+								            		$article_list = article_published(2,1,False,'Bits');
 								            		while($article_id = mysql_fetch_array($article_list, MYSQL_ASSOC )){
 							    		 				echo '<li>';
 						        						post_list($article_id['SL_NO']);
 								        				echo '</li>';
 							    		 			}// end of while loop
 							    		 	?>
-							    		 		<li class="more-post">
-							    		 			<a href="<?php echo static_url('main') ?>all-articles">More Post... <i class="fa fa-long-arrow-right"></i></a>
-							    		 		</li>
+							    		 		
 							    		 	<?php
 							    		 		else:
 								    		 		echo '<li>';
@@ -129,7 +127,7 @@
 							    		 </div>
 							    	</div>
 							    </div>
-							    <div class="column-small-4 sidebar">
+							    <div class="column-small-4 sidebar hide-small">
 								    <?php 
 							    		/* 
 							    			Side Bar include.
@@ -143,6 +141,34 @@
 							    </div>
 							</div>
 						</div>
+						<!-- Most Read -->
+					    <div class="row post-list-2">
+					    	<div class="column-small-11 center add-on ">
+						    	<ul>
+							    	<li>
+							    		<h3 class="post-list-title"><a class="post-title-a" href="">Article 1</a></h3>
+							    		<img src="http://ns2.techstream.org/images/Complete-Guide-To-Responsive-Web-Design.jpg">
+							    		<p>Lorren Ipsome is the new generation of the txt in the man kind of all persons in earth.</p>
+							    	</li>
+							    	<li>
+							    		<h3 class="post-list-title"><a class="post-title-a" href="">Article 1</a></h3>
+							    		<img src="http://ns2.techstream.org/images/Maker-Party-Logos-with-CSS.jpg">
+							    		<p>Lorren Ipsome is the new generation of the txt in the man kind of all persons in earth.</p>
+							    	</li>
+							    	<li>
+							    		<h3 class="post-list-title"><a class="post-title-a" href="">Article 1</a></h3>
+							    		<img src="http://ns2.techstream.org/images/World-Wide-Web-in-the-Middle-of-2014.jpg">
+							    		<p>Lorren Ipsome is the new generation of the txt in the man kind of all persons in earth.</p>
+							    	</li>
+							    	<li>
+							    		<h3 class="post-list-title"><a class="post-title-a" href="">Article 1</a></h3>
+							    		<img src="http://ns2.techstream.org/images/Hello-World.jpg">
+							    		<p>Lorren Ipsome is the new generation of the txt in the man kind of all persons in earth.</p>
+							    	</li>
+							    </ul>
+							</div>
+					    </div>
+					    <!-- End of Mostread -->
 					</div>
 
 				</div><!-- end of class="article-container" -->

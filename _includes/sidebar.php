@@ -24,8 +24,10 @@
 /*
   #####  Ad BOX ###
 */
-	ad_box();
 	side_search_box();
 	newsletter_box();
+	ad_box();
 ?>
+	
+	
 	
