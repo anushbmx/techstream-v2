@@ -100,7 +100,7 @@
 				<div class="inner-container">
 					<div class="row">
 						<div class="column-small-11 center">						    
-						    <div class="add-on row">
+						    <div class="add-on row post-list-1">
 							    <div class="column-small-8 padd0 add-on-main">
 							    	<div class="row">
 							    		 <div class="column-small-12 padd0">
@@ -114,9 +114,6 @@
 						        						post_list($article_id['SL_NO']);
 								        				echo '</li>';
 							    		 			}// end of while loop
-							    		 	?>
-							    		 		
-							    		 	<?php
 							    		 		else:
 								    		 		echo '<li>';
 						        					post_list();
@@ -124,6 +121,19 @@
 							    		 		endif;
 							    		 	?>
 							    		 	</ul>
+							    		 	<ul class="post-list post-list-1-2 hide-large view-small">
+							    		 	<?php
+												if(article_exist()): 
+								            		$article_list = article_published(3,3,False,'Bits');
+								            		while($article_id = mysql_fetch_array($article_list, MYSQL_ASSOC )){
+							    		 				echo '<li>';
+						        						post_list($article_id['SL_NO']);
+								        				echo '</li>';
+							    		 			}// end of while loop
+							    		 		endif;
+							    		 	?>
+							    		 	</ul>
+
 							    		 </div>
 							    	</div>
 							    </div>
@@ -141,34 +151,83 @@
 							    </div>
 							</div>
 						</div>
-						<!-- Most Read -->
-					    <div class="row post-list-2">
-					    	<div class="column-small-11 center add-on ">
-						    	<ul>
-							    	<li>
-							    		<h3 class="post-list-title"><a class="post-title-a" href="">Article 1</a></h3>
-							    		<img src="http://ns2.techstream.org/images/Complete-Guide-To-Responsive-Web-Design.jpg">
-							    		<p>Lorren Ipsome is the new generation of the txt in the man kind of all persons in earth.</p>
-							    	</li>
-							    	<li>
-							    		<h3 class="post-list-title"><a class="post-title-a" href="">Article 1</a></h3>
-							    		<img src="http://ns2.techstream.org/images/Maker-Party-Logos-with-CSS.jpg">
-							    		<p>Lorren Ipsome is the new generation of the txt in the man kind of all persons in earth.</p>
-							    	</li>
-							    	<li>
-							    		<h3 class="post-list-title"><a class="post-title-a" href="">Article 1</a></h3>
-							    		<img src="http://ns2.techstream.org/images/World-Wide-Web-in-the-Middle-of-2014.jpg">
-							    		<p>Lorren Ipsome is the new generation of the txt in the man kind of all persons in earth.</p>
-							    	</li>
-							    	<li>
-							    		<h3 class="post-list-title"><a class="post-title-a" href="">Article 1</a></h3>
-							    		<img src="http://ns2.techstream.org/images/Hello-World.jpg">
-							    		<p>Lorren Ipsome is the new generation of the txt in the man kind of all persons in earth.</p>
-							    	</li>
-							    </ul>
+						<!-- Most article -->
+					    	<?php
+								if(article_exist()): 
+									echo '<div class="row post-list-2 hide-small"><ul>';
+					            		$article_list = article_published(4,3,False,'Bits');
+					            		while($article_id = mysql_fetch_array($article_list, MYSQL_ASSOC )){
+					            			echo "<li>";
+											post_list($article_id['SL_NO'],1);
+											echo "</li>";
+				    		 			}// end of while loop
+			    		 			echo '</ul></div>';
+			    		 		endif;
+			    		 	?>
+					   
+					    <!-- End of more article -->
+					    <!-- most read -->
+					    <div class="row post-list-3">
+					    	
+					    	<div class="column-small-4 padd0-med sections">
+					    		<h3 class="section-heading"><i class="fa fa-file-text"></i> Sections</h3>
+					    		<ul class="sections-list section">
+					    			<li>
+					    				<div class="row">
+					    					<div class="column-xxsmall-3 sections-list-icon"><i class="fa fa-clipboard"></i></div>
+					    					<div class="column-xxsmall-9 sections-list-description">
+					    						<h3 class="post-list-title">Bits</h3>
+					    						<h6>For those who code</h6>
+					    						<a href="#" class="details-link">all work</a>
+					    					</div>
+					    				</div>
+					    			</li>
+					    			<li>
+					    				<div class="row">
+					    					<div class="column-xxsmall-3 sections-list-icon"><i class="fa fa-css3"></i></div>
+					    					<div class="column-xxsmall-9 sections-list-description">
+					    						<h3 class="post-list-title">Web Design</h3>
+					    						<h6>For those who make websites</h6>
+					    						<a href="#" class="details-link">all work</a>
+					    					</div>
+					    				</div>
+					    			</li>
+					    			<li>
+					    				<div class="row">
+					    					<div class="column-xxsmall-3 sections-list-icon"><i class="fa fa-html5"></i></div>
+					    					<div class="column-xxsmall-9 sections-list-description">
+					    						<h3 class="post-list-title">Web Development</h3>
+					    						<h6>For those who make websites</h6>
+					    						<a href="#" class="details-link">all work</a>
+					    					</div>
+					    				</div>
+					    			</li>
+					    		</ul>
+							</div>
+							<div class="column-small-8 padd0">
+								<h3 class="section-heading"><i class="fa fa-file-text"></i> Most Read</h3>
+								<div class="row">
+							    	<div class="column-xsmall-7 most-read-post">
+							    		<ul class="sections-list">
+							    			<li><?php  post_list(122,2); ?></li>
+							    			<li><?php  post_list(125,2); ?></li>
+							    			<li><?php  post_list(127,2); ?></li>
+							    		</ul>
+									</div>
+									<div class="column-xsmall-5 most-read-bits">
+										<ul class="sections-list">
+							    			<li><?php  bits_list(122,1); ?></li>
+							    			<li><?php  bits_list(125,1); ?></li>
+							    			<li><?php  bits_list(127,1); ?></li>
+							    			<li><?php  bits_list(122,1); ?></li>
+							    			<li><?php  bits_list(125,1); ?></li>
+							    			<li><?php  bits_list(127,1); ?></li>
+							    		</ul>
+									</div>
+							    </div>
 							</div>
 					    </div>
-					    <!-- End of Mostread -->
+					    <!-- End of most read -->
 					</div>
 
 				</div><!-- end of class="article-container" -->
