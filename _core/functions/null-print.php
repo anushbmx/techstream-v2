@@ -84,7 +84,7 @@ function ad_box() {
 **/
 	if($GLOBALS['ad'] == false):
 ?>
-	<script type="text/javascript" src="http://cdn.adpacks.com/adpacks.js?legacyid=1293798&zoneid=1386&key=9db79f8dbe2e599ab3e31808ec3b6880&serve=C6SI42Y&placement=techstreamorg&circle=dev" id="_adpacks_js"></script>
+	<!-- <script type="text/javascript" src="http://cdn.adpacks.com/adpacks.js?legacyid=1293798&zoneid=1386&key=9db79f8dbe2e599ab3e31808ec3b6880&serve=C6SI42Y&placement=techstreamorg&circle=dev" id="_adpacks_js"></script> -->
 <?php 
 		$GLOBALS['ad']  = true;
 	endif;

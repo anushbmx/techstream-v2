@@ -24,65 +24,69 @@
 						<div class="row">
 							<div class="column-small-11 center">
 								<div class="row">
-									<div class="column-small-6 padd0">
-							            <div class="article-image center-small">
-							            <?php if(article_exist()): 
+									<div class="column-med-10 padd0 header-content">
+										<div class="row">
+											<div class="column-small-7 padd0">
+									            <div class="article-image center-small">
+									            <?php if(article_exist()): 
 
-							            		$article_id = article_last_published(FALSE,'Bits');
-							            		$data = article_data($article_id)
-							            ?>
-							            	<a href="<?php static_url('main'); $data->article_url();?>">
-								            	<img src="<?php static_url('images'); $data->article_image();?>"/>
-								            	<div class="overlay-box">
-								            		<h1 class="overlay-heading"><?php $data->article_title();?></h1>
-								            	</div><!-- end of class ="overlay-box" -->
-								            </a>
-							            <?php else: ?>
-							            	<img src="images/Hello-World.jpg"/>
-							            	<div class="overlay-box">
-							            		<h1 class="overlay-heading">No Posts Found</h1>
-							            	</div><!-- end of class ="overlay-box" -->							            	
-							            <?php endif; ?>
-							            </div><!-- end of class="atticle-image" -->
-							        </div> <!-- end of column -1 -->
-							        <div class="column-small-4 padd0-small">
-							        	<div class="bits-container center-small">
-							        		<h2 class="section-heading"><i class="fa fa-clipboard fa-2"></i>  Bits</h2>
-							        		<div class="bits">
-							        			<ul class="bit">
-							        			<?php
-													if(article_exist()): 
-									            		$article_list = article_published(3,0,True,'Bits');
-									            		while($article_id = mysql_fetch_array($article_list, MYSQL_ASSOC )){
-									            			$data = article_data($article_id['SL_NO'])
-								    		 	?>
-							        				<li>
-							        					<a href="<?php static_url('main'); $data->article_url();?>">
-							        						<h3 class="bit-title"><?php $data->article_title();?></h3>
-							        						<span class="section-link">in <?php $data->article_sub_section();?></span>
-							        					</a>
-							        				</li>
-							        			<?php
-							        					}//end of while
-							        			?>
-							        				<li class="more-bits"><a href="<?php static_url('main');?>Bits">More ... <i class="fa fa-long-arrow-right"></i></a></li>
-							        			<?php
-							        				else:
-							        			?>
-							        				<li>
-							        					<a href="#">
-							        						<h3 class="bit-title">No Bits Found</h3>
-							        						<span class="section-link">Nothing found</span>
-							        					</a>
-							        				</li>
-							        			<?php 
-							        				endif;
-							        			?>
-							        			</ul>
-							        		</div><!-- end of class="bits" -->
-							        	</div><!-- end of class="bits-container" -->
-							        </div><!-- end of column 2 -->
-							        <div class="column-small-2 hide-small">
+									            		$article_id = article_last_published(FALSE,'Bits');
+									            		$data = article_data($article_id)
+									            ?>
+									            	<a href="<?php static_url('main'); $data->article_url();?>">
+										            	<img src="<?php static_url('images'); $data->article_image();?>"/>
+										            	<div class="overlay-box">
+										            		<h1 class="overlay-heading"><?php $data->article_title();?></h1>
+										            	</div><!-- end of class ="overlay-box" -->
+										            </a>
+									            <?php else: ?>
+									            	<img src="images/Hello-World.jpg"/>
+									            	<div class="overlay-box">
+									            		<h1 class="overlay-heading">No Posts Found</h1>
+									            	</div><!-- end of class ="overlay-box" -->							            	
+									            <?php endif; ?>
+									            </div><!-- end of class="atticle-image" -->
+									        </div> <!-- end of column -1 -->
+									        <div class="column-small-5 padd0-small">
+									        	<div class="bits-container center-small">
+									        		<h2 class="section-heading"><i class="fa fa-clipboard fa-2"></i>  Bits</h2>
+									        		<div class="bits">
+									        			<ul class="bit">
+									        			<?php
+															if(article_exist()): 
+											            		$article_list = article_published(3,0,True,'Bits');
+											            		while($article_id = mysql_fetch_array($article_list, MYSQL_ASSOC )){
+											            			$data = article_data($article_id['SL_NO'])
+										    		 	?>
+									        				<li>
+									        					<a href="<?php static_url('main'); $data->article_url();?>">
+									        						<h3 class="bit-title"><?php $data->article_title();?></h3>
+									        						<span class="section-link">in <?php $data->article_sub_section();?></span>
+									        					</a>
+									        				</li>
+									        			<?php
+									        					}//end of while
+									        			?>
+									        				<li class="more-bits"><a href="<?php static_url('main');?>Bits">More ... <i class="fa fa-long-arrow-right"></i></a></li>
+									        			<?php
+									        				else:
+									        			?>
+									        				<li>
+									        					<a href="#">
+									        						<h3 class="bit-title">No Bits Found</h3>
+									        						<span class="section-link">Nothing found</span>
+									        					</a>
+									        				</li>
+									        			<?php 
+									        				endif;
+									        			?>
+									        			</ul>
+									        		</div><!-- end of class="bits" -->
+									        	</div><!-- end of class="bits-container" -->
+									        </div><!-- end of column 2 -->
+									    </div>
+							        </div>
+							        <div class="column-med-2 padd0">
 							        	<div class="ads-header-container">
 							        		<?php ad_box(); ?>								        	
 								        </div>
@@ -174,8 +178,8 @@
 						    					<div class="column-xxsmall-3 sections-list-icon"><i class="fa fa-clipboard"></i></div>
 						    					<div class="column-xxsmall-9 sections-list-description">
 						    						<h3 class="post-list-title">Bits</h3>
-						    						<h6>For those who code</h6>
-						    						<a href="#" class="details-link">all work</a>
+						    						<h6>For those who code.</h6>
+						    						<a href="<?php static_url('main');?>Bits" class="details-link">all work</a>
 						    					</div>
 						    				</div>
 						    			</li>
@@ -184,8 +188,8 @@
 						    					<div class="column-xxsmall-3 sections-list-icon"><i class="fa fa-css3"></i></div>
 						    					<div class="column-xxsmall-9 sections-list-description">
 						    						<h3 class="post-list-title">Web Design</h3>
-						    						<h6>For those who make websites</h6>
-						    						<a href="#" class="details-link">all work</a>
+						    						<h6>For those who make websites.</h6>
+						    						<a href="<?php static_url('main');?>Web-Design" class="details-link">all work</a>
 						    					</div>
 						    				</div>
 						    			</li>
@@ -194,8 +198,8 @@
 						    					<div class="column-xxsmall-3 sections-list-icon"><i class="fa fa-html5"></i></div>
 						    					<div class="column-xxsmall-9 sections-list-description">
 						    						<h3 class="post-list-title">Web Development</h3>
-						    						<h6>For those who make websites</h6>
-						    						<a href="#" class="details-link">all work</a>
+						    						<h6>For those who code the web.</h6>
+						    						<a href="<?php static_url('main');?>Web-Development" class="details-link">all work</a>
 						    					</div>
 						    				</div>
 						    			</li>

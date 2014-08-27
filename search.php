@@ -28,26 +28,17 @@
 						<div class="row">
 							<div class="column-small-11 center">
 								<div class="row">
-									<div class="column-small-8">
-										<div class="row">
-											<div class="column-small- cat-descs">
+									<div class="column-small-8 cat-desc">
+										<div class="row padd0">
 											<?php 
 												categories_list($category_data->cat_name);
 											?>
-											</div>
-											<div class="column-small-4">
-												<?php ad_box() ?>										
-											</div>
 										</div>
-										<div class="row">
-											<div class="column-small-8 cat-descs">
-												<h1><?php echo $title ;?></h1>
-												<p><?php echo $description; ?></p>
-											</div>
-										</div>
+										<h1 class="article-heading"><?php echo $title; ?></h1>
+										<p><?php echo $description; ?></p>
 									</div>
 									<div class="column-small-4">
-											<?php ad_box() ?>										
+										<?php ad_box() ?>										
 									</div>
 								</div>
 							</div>
