@@ -27,6 +27,7 @@
 	side_search_box();
 	newsletter_box();
 	ad_box();
+	feeds_box();
 ?>
 	
 	

@@ -21,6 +21,7 @@ body {
 img{
 	max-width: 100%;
 	display: block;
+	border: 1px solid rgba(0,0,0,0.1);
 }
 ol, ul {
     margin: 0px;
@@ -295,6 +296,9 @@ button, input, select, textarea {
 	margin-left: auto;
 	position: relative;
 }
+.article-image img{
+	border: none;
+}
 .article-image a:hover .overlay-box{
 	background-color: rgba(41, 128, 185,1);
 }
@@ -317,7 +321,7 @@ button, input, select, textarea {
 	font-size: 1.2rem;
 }
 /* bits container */
-.bits-container,.feeds-header-container{
+.bits-container{
 	width: 100%;
 	max-width: 580px;
 	height: 100%;
@@ -356,11 +360,12 @@ button, input, select, textarea {
 }
 
 .feed-header{
-	padding-top: 10px;
+	margin: 10px auto;
 	height: 100%;
 }
 .feed-header li{
-	height: 100%;
+	width: 49%;
+	display: inline-block;
 }
 .feed-header a{
 	display: block;
@@ -435,20 +440,13 @@ a.tw-twitter:hover{
 	text-transform: uppercase;
 	font-size: 10px;
 }
-.bsa_it a{
-	vertical-align: top;
-	max-width: 200px;
-	line-height: 0.7em !important;
+.bsap{
+	max-width: 280px;
+	margin: 2rem auto;
 }
-.one .bsa_it_ad{
-  background: transparent !important;
-  border: none !important;    
+.content-article .bsap, .ads-header-container .bsap{
+	margin: 10px auto;
 }
-.one .bsa_it_p { 
-	padding-right: 15px;
-	position: static !important;
-}
-
 #content-article{
 	border-bottom: 1px solid rgba(0, 0, 0, 0.2) ;
 }
@@ -462,7 +460,7 @@ a.tw-twitter:hover{
 	border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 .post-addon{
-	margin-bottom: 1rem;
+	margin: 0.5rem 0;
 }
 .post-addon li{
 	display: inline-block;
@@ -519,6 +517,7 @@ a.tw-twitter:hover{
 }
 .author-avatar{
 	max-width: 105px;
+	margin-top: 10px !important;
 }
 .author-social li{
 	margin-top: 5px;
@@ -530,7 +529,7 @@ a.tw-twitter:hover{
 	margin-top: 0.5rem;
 }
 .powered_by{
-	font-size: 0.8rem;
+	font-size: 0.65rem;
 	text-align: right;
 	opacity: 0.8;
 }
@@ -555,7 +554,7 @@ a.tw-twitter:hover{
 
 .add-on-main, .add-on-bits{
 	border-right: 1px solid rgba(0, 0, 0, 0.2);
-	min-height: 400px !important;
+	min-height: 350px !important;
 }
 .article-add-info{
 	font-size: 0.75em;
@@ -687,9 +686,6 @@ a.tw-twitter:hover{
 }
 .post-image a{
 	display: block;
-}
-.post-image a:hover{
-	box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 /*navigation */
 .pagination {
@@ -847,6 +843,9 @@ a.tw-twitter:hover{
 	.most-read-post{
 		padding-right: 0 !important;
 		border-right:none !important;
+	}
+	.about-author{
+		text-align: center;
 	}
 }
 /*Standard breaks of Grid*/

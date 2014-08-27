@@ -181,7 +181,7 @@ function article_author($article_id) {
 	echo '<div class="about-author">';
     echo '	<div class="row">';
     echo '		<h4 class="section-heading" > <i class="fa fa-user"></i> About the Author</h4>';
-    echo '		<div class="column-xsmall-2 padd0 author-avatar"><img src="'.static_url('img',1).'avatars/'.$user_data['avatar'].'"></div>';
+    echo '		<div class="column-xsmall-2 padd0 author-avatar center-xsmall"><img src="'.static_url('img',1).'avatars/'.$user_data['avatar'].'"></div>';
     echo '		<div class="column-xsmall-10">';
     echo '			<h3 itemprop="author" >'.$user_data['first_name'].'</h3>';
     echo '			<p>'.$user_data['About_Author'].'</p>';

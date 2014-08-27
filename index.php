@@ -83,12 +83,8 @@
 							        	</div><!-- end of class="bits-container" -->
 							        </div><!-- end of column 2 -->
 							        <div class="column-small-2 hide-small">
-							        	<div class="feeds-header-container">
-							        		<h2 class="section-heading"><i class="fa fa-share-alt fa-2"></i> Feeds</h2>
-								        	<ul class="feed-header">
-								        		<li><a href="http://techstream.org/sitemap" class="tw-rss"><i class="fa fa-rss"></i><span class="hover-eff">RSS</span></a></li>
-												<li><a href="http://techstream.org/sitemap" class="tw-twitter"><i class="fa fa-twitter"></i></a></li>
-								        	</ul>
+							        	<div class="ads-header-container">
+							        		<?php ad_box(); ?>								        	
 								        </div>
 							        </div>
 							    </div>
@@ -148,9 +144,10 @@
 							    		*/
 							    		include('_includes/sidebar.php');
 							    	?>
+
 							    </div>
 							</div>
-						</div>
+						
 						<!-- Most article -->
 					    	<?php
 								if(article_exist()): 
@@ -167,67 +164,68 @@
 					   
 					    <!-- End of more article -->
 					    <!-- most read -->
-					    <div class="row post-list-3">
-					    	
-					    	<div class="column-small-4 padd0-med sections">
-					    		<h3 class="section-heading"><i class="fa fa-file-text"></i> Sections</h3>
-					    		<ul class="sections-list section">
-					    			<li>
-					    				<div class="row">
-					    					<div class="column-xxsmall-3 sections-list-icon"><i class="fa fa-clipboard"></i></div>
-					    					<div class="column-xxsmall-9 sections-list-description">
-					    						<h3 class="post-list-title">Bits</h3>
-					    						<h6>For those who code</h6>
-					    						<a href="#" class="details-link">all work</a>
-					    					</div>
-					    				</div>
-					    			</li>
-					    			<li>
-					    				<div class="row">
-					    					<div class="column-xxsmall-3 sections-list-icon"><i class="fa fa-css3"></i></div>
-					    					<div class="column-xxsmall-9 sections-list-description">
-					    						<h3 class="post-list-title">Web Design</h3>
-					    						<h6>For those who make websites</h6>
-					    						<a href="#" class="details-link">all work</a>
-					    					</div>
-					    				</div>
-					    			</li>
-					    			<li>
-					    				<div class="row">
-					    					<div class="column-xxsmall-3 sections-list-icon"><i class="fa fa-html5"></i></div>
-					    					<div class="column-xxsmall-9 sections-list-description">
-					    						<h3 class="post-list-title">Web Development</h3>
-					    						<h6>For those who make websites</h6>
-					    						<a href="#" class="details-link">all work</a>
-					    					</div>
-					    				</div>
-					    			</li>
-					    		</ul>
-							</div>
-							<div class="column-small-8 padd0">
-								<h3 class="section-heading"><i class="fa fa-file-text"></i> Most Read</h3>
-								<div class="row">
-							    	<div class="column-xsmall-7 most-read-post">
-							    		<ul class="sections-list">
-							    			<li><?php  post_list(122,2); ?></li>
-							    			<li><?php  post_list(125,2); ?></li>
-							    			<li><?php  post_list(127,2); ?></li>
-							    		</ul>
-									</div>
-									<div class="column-xsmall-5 most-read-bits">
-										<ul class="sections-list">
-							    			<li><?php  bits_list(122,1); ?></li>
-							    			<li><?php  bits_list(125,1); ?></li>
-							    			<li><?php  bits_list(127,1); ?></li>
-							    			<li><?php  bits_list(122,1); ?></li>
-							    			<li><?php  bits_list(125,1); ?></li>
-							    			<li><?php  bits_list(127,1); ?></li>
-							    		</ul>
-									</div>
-							    </div>
-							</div>
+						    <div class="row post-list-3">
+						    	
+						    	<div class="column-small-4 padd0-med sections">
+						    		<h3 class="section-heading"><i class="fa fa-file-text"></i> Sections</h3>
+						    		<ul class="sections-list section">
+						    			<li>
+						    				<div class="row">
+						    					<div class="column-xxsmall-3 sections-list-icon"><i class="fa fa-clipboard"></i></div>
+						    					<div class="column-xxsmall-9 sections-list-description">
+						    						<h3 class="post-list-title">Bits</h3>
+						    						<h6>For those who code</h6>
+						    						<a href="#" class="details-link">all work</a>
+						    					</div>
+						    				</div>
+						    			</li>
+						    			<li>
+						    				<div class="row">
+						    					<div class="column-xxsmall-3 sections-list-icon"><i class="fa fa-css3"></i></div>
+						    					<div class="column-xxsmall-9 sections-list-description">
+						    						<h3 class="post-list-title">Web Design</h3>
+						    						<h6>For those who make websites</h6>
+						    						<a href="#" class="details-link">all work</a>
+						    					</div>
+						    				</div>
+						    			</li>
+						    			<li>
+						    				<div class="row">
+						    					<div class="column-xxsmall-3 sections-list-icon"><i class="fa fa-html5"></i></div>
+						    					<div class="column-xxsmall-9 sections-list-description">
+						    						<h3 class="post-list-title">Web Development</h3>
+						    						<h6>For those who make websites</h6>
+						    						<a href="#" class="details-link">all work</a>
+						    					</div>
+						    				</div>
+						    			</li>
+						    		</ul>
+								</div>
+								<div class="column-small-8 padd0">
+									<h3 class="section-heading"><i class="fa fa-file-text"></i> Most Read</h3>
+									<div class="row">
+								    	<div class="column-xsmall-7 most-read-post">
+								    		<ul class="sections-list">
+								    			<li><?php  post_list(122,2); ?></li>
+								    			<li><?php  post_list(125,2); ?></li>
+								    			<li><?php  post_list(127,2); ?></li>
+								    		</ul>
+										</div>
+										<div class="column-xsmall-5 most-read-bits">
+											<ul class="sections-list">
+								    			<li><?php  bits_list(122,1); ?></li>
+								    			<li><?php  bits_list(125,1); ?></li>
+								    			<li><?php  bits_list(127,1); ?></li>
+								    			<li><?php  bits_list(122,1); ?></li>
+								    			<li><?php  bits_list(125,1); ?></li>
+								    			<li><?php  bits_list(127,1); ?></li>
+								    		</ul>
+										</div>
+								    </div>
+								</div>
+						    </div>
+						    <!-- End of most read -->
 					    </div>
-					    <!-- End of most read -->
 					</div>
 
 				</div><!-- end of class="article-container" -->
