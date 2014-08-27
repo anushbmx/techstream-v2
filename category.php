@@ -39,7 +39,6 @@
 					<div class="inner-container">
 						<div class="row">
 							<div class="column-small-11 center">
-								
 								<div class="row">
 									<div class="column-small-8 cat-desc">
 										<div class="row padd0">

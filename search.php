@@ -28,19 +28,31 @@
 						<div class="row">
 							<div class="column-small-11 center">
 								<div class="row">
-									<?php 
-										categories_list($category_data->cat_name);
-									?>
-								</div>
-								<div class="row">
-									<div class="column-small-10 cat-desc">
-										<h1><?php echo $title ;?></h1>
-										<p><?php echo $description; ?></p>
+									<div class="column-small-8">
+										<div class="row">
+											<div class="column-small- cat-descs">
+											<?php 
+												categories_list($category_data->cat_name);
+											?>
+											</div>
+											<div class="column-small-4">
+												<?php ad_box() ?>										
+											</div>
+										</div>
+										<div class="row">
+											<div class="column-small-8 cat-descs">
+												<h1><?php echo $title ;?></h1>
+												<p><?php echo $description; ?></p>
+											</div>
+										</div>
+									</div>
+									<div class="column-small-4">
+											<?php ad_box() ?>										
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>					
+					</div>		
 				</header><!-- end of class = "content-header" -->
 				<?php main_search_box($q); ?>
 				<div class="inner-container">
