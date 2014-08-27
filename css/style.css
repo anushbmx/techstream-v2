@@ -296,7 +296,7 @@ button, input, select, textarea {
 	margin-left: auto;
 	position: relative;
 }
-.article-image{
+.article-image img{
 	border-top: none;
 	border-bottom: none;
 }
