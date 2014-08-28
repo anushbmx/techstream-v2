@@ -14,7 +14,7 @@ html{
 }
 body {
     font: 16px arial,"Times New Roman",Times,serif;
-    color: rgba(0,0,0,0.8);
+    color: rgba(0,0,0,0.9);
     -moz-osx-font-smoothing:grayscale;
     text-rendering: optimizelegibility;
 }
@@ -281,8 +281,9 @@ button, input, select, textarea {
 	background: url('../images/logo.png');
 	background-repeat: no-repeat;
 	display: block;
-	width: 180px;
+	width: 300px;
 	height: 70px;
+	background-position: center;
 }
 #content-header{
 	width: 100%;
@@ -442,7 +443,7 @@ a.tw-twitter:hover{
 }
 .bsap{
 	max-width: 280px;
-	margin: 2rem auto;
+	margin: 1.4rem auto;
 }
 .content-article .bsap, .ads-header-container .bsap{
 	margin: 10px auto;
@@ -756,9 +757,12 @@ a.tw-twitter:hover{
 	color: #000;
 	font-size: 0.83rem;
 }
+.footer-top{
+	margin-top: 0.6rem;
+}
 .footer-links{
 	list-style: none;
-	line-height: 50px;
+	line-height: 30px;
 }
 .footer-links li{
 	display: inline;
@@ -771,6 +775,12 @@ a.tw-twitter:hover{
 }
 .footer-links a:hover{
 	text-decoration: underline;
+}
+.friends-links{
+	border: 1px solid rgba(255,255,255,1);
+}
+.friends-links li{
+	display: inline-block;
 }
 .footer-right{
 	text-align: right;
@@ -786,9 +796,13 @@ a.tw-twitter:hover{
 	content: " " ;
 	padding: 0;
 }
+.link-title{
+	background: rgba(0,0,0,1);
+	color: rgba(255,255,255,1);
+	padding: 0 1rem;
+}
 .footer-bottom{
 	margin-top: 30px;
-	border-top: 1px solid rgba(255,255,255,1);
 	font-size: 0.70rem;
 }
 .footer-bottom a{
@@ -828,6 +842,9 @@ a.tw-twitter:hover{
 		padding:5px;
 		margin-top: 0px;
 	}
+	.header-content{
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+	}
 }
 @media(max-width: 540px){
 	.pagination li:first-child{
@@ -864,9 +881,6 @@ a.tw-twitter:hover{
 	}
 	.pagination {
 		text-align: left;
-	}
-	.header-content{
-		border-bottom: 1px solid rgba(0,0,0,0.1);
 	}
 }
 @media(max-width:768px){

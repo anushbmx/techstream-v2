@@ -222,7 +222,7 @@ function post_list($article_id,$type = 0) {
 		if($type == 0){
 			echo '<div class="row">';
 			//echo '	<h3 class="post-list-title hide-large view-xsmall"><a href="'.static_url('main',1).$data->ar_url.'" class="post-title-a">'.$data->ar_title.'</a></h3>';
-			echo '	<div class="column-xsmall-4 padd0 post-image"<a href="'.static_url('main',1).$data->ar_url.'""><img src="'.static_url('images',1).$data->ar_image.'"/><div class="overlay-box hide-large view-xsmall"><h1 class="overlay-heading">'.$data->ar_title.'</h1></div></a></div>';
+			echo '	<div class="column-xsmall-4 padd0 post-image"><a href="'.static_url('main',1).$data->ar_url.'""><img src="'.static_url('images',1).$data->ar_image.'"/><div class="overlay-box hide-large view-xsmall"><h1 class="overlay-heading">'.$data->ar_title.'</h1></div></a></div>';
 			echo '	<div class="column-xsmall-8 padd0-xsmall">';
 			echo '		<h3 class="post-list-title hide-xsmall"><a href="'.static_url('main',1).$data->ar_url.'" class="post-title-a">'.$data->ar_title.'</a></h3>';
 			echo '		<p>'.elliStr($data->ar_description,200).' .. <a href="'.static_url('main',1).$data->ar_url.'">Read More</a></p>';

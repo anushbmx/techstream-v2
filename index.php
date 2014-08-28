@@ -206,7 +206,7 @@
 						    		</ul>
 								</div>
 								<div class="column-small-8 padd0">
-									<h3 class="section-heading"><i class="fa fa-file-text"></i> Most Read</h3>
+									<h3 class="section-heading"><i class="fa fa-eye"></i> Most Read</h3>
 									<div class="row">
 								    	<div class="column-xsmall-7 most-read-post">
 								    		<ul class="sections-list">

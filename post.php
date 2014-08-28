@@ -97,7 +97,7 @@
 						<div class="row">
 							<div class="column-small-11 center">
 								<div class="row">
-									<div class="column-med-2">
+									<div class="column-med-2 padd0">
 										<?php ad_box() ?>
 									</div>
 									<div class="column-med-8">
@@ -106,7 +106,7 @@
 									    </article>  <!-- end of class="article" -->
 									    <?php  social_sharing($article_id); ?>
 									</div>
-									<div class="column-med-2 hide-med">
+									<div class="column-med-2 hide-med padd0">
 										<?php  social_sharing($article_id,'horizontal'); ?>
 									</div>
 								</div>

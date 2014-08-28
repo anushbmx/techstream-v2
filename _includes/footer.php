@@ -25,7 +25,7 @@
 				<div class="inner-container">
 					<div class="row">
 						<div class="column-small-11 center">
-							<div class="row">
+							<div class="row footer-top">
 							    <div class="column-small-7">
 									<ul class="footer-links">
 										<li><a href="http://techstream.org/About_us">About</a></li>
@@ -43,18 +43,30 @@
 								</div>
 							</div>
 							<div class="row footer-bottom">
-							    <div class="column-small-7">
-							    	<ul class="footer-links">
-										<li><a href="http://techstream.org/Privacy">Privacy</a></li>
-										<li><a href="http://techstream.org/Licence">Licence</a></li>
-										<li><a href="http://techstream.org/Credits">Credits</a></li>
-										<li><a href="http://techstream.org/sitemap"><i class="fa fa-sitemap"></i> Site Map </a></a></li>
-									</ul>
-							    </div>
-							    <div class="column-small-5">
-									<ul class="footer-links footer-right">
-										<li>&copy; <?php echo date('Y',time()); ?> Tech Stream. All code <a href="http://opensource.org/licenses/MIT">MIT license</a></li>
-									</ul>
+								<div class="row ">
+									<div class="column-small-12">
+										<ul class="footer-links friends-links">
+											<li class="link-title">Friends : </li>
+											<li><a href="http://techstream.org/Licence">Licence</a></li>
+											<li><a href="http://techstream.org/Credits">Credits</a></li>
+											<li><a href="http://techstream.org/sitemap">Site Map </a></a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="row">
+								    <div class="column-small-7">
+								    	<ul class="footer-links">
+											<li><a href="http://techstream.org/Privacy">Privacy</a></li>
+											<li><a href="http://techstream.org/Licence">Licence</a></li>
+											<li><a href="http://techstream.org/Credits">Credits</a></li>
+											<li><a href="http://techstream.org/sitemap"><i class="fa fa-sitemap"></i> Site Map </a></a></li>
+										</ul>
+								    </div>
+								    <div class="column-small-5">
+										<ul class="footer-links footer-right">
+											<li>&copy; <?php echo date('Y',time()); ?> Tech Stream. All code <a href="http://opensource.org/licenses/MIT">MIT license</a></li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
